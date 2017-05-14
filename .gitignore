@@ -18,5 +18,9 @@ bundle.js.map
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore node module files
+# Ignore node files
 node_modules/
+npm-debug.log
+
+.DS_Store
+
