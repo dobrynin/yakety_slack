@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm({user});
   }
 
   navLink() {
@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div classNmae='session-form-container'>
+      <div className='session-form-container'>
         <form onSubmit={this.handleSubmit} className='session-form-box'>
           Welcome to Yak!
           <br/>
