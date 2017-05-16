@@ -3,12 +3,12 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import { Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
+import SplashPage from './splash_page/splash_page';
 
 const App = () => (
   <div>
     <header>
-      <h1>Yak</h1>
-      <GreetingContainer />
+      <SplashPage />
     </header>
 
     <AuthRoute path='/login' component={SessionFormContainer} />
