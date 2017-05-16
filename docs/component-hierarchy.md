@@ -1,7 +1,15 @@
 ## Component Hierarchy
 
+**SplashPageContainer**
+ - SplashPage
+
 **AuthFormContainer**
  - AuthForm
+
+**Home**
+ - HeaderContainer
+ - NavContainer
+ - MessagesIndexContainer
 
 **NavContainer**
  - Nav
@@ -18,57 +26,21 @@
  - ChannelIndex
   - ChannelIndexItem
 
-**DirectMessageContainer**
+**DirectMessageIndexContainer**
  - DirectMessageIndex
   - DirectMessageIndexItem
-  - DirectMessageForm
+  - DirectMessageFormContainer
 
 **HeaderContainer**
- -
+ - Channel Name
+ - Channel Member Count
+ - Channel Description
 
 **MessageFormContainer**
  - MessageForm
 
-
-
-
-**SplashPageContainer**
- - SplashPage
- - SplashPageHeader
-
-**Home**
- - ThreadContainer
- - SidebarContainer
- - HeaderContainer
-
-**ThreadContainer**
- - Thread
-
-**SidebarContainer**
- - Sidebar
-
-**HeaderContainer**
- - Header
-
-**Thread**
- - Messages
- - NewMessage
-
-**Sidebar**
- - SidebarHeader
- - ChannelIndex
- - DirectMessageIndex
- - NewDirectMessageThread
-
-**ChannelIndex**
- - ChannelIndexItem
-
-**DirectMessageIndex**
- - DirectMessageIndexItem
-
-**Header**
- - SpecificThreadHeader
- - GeneralHeader
+ **DirectMessageFormContainer**
+ - DirectMessageForm
 
 ## Routes
 
