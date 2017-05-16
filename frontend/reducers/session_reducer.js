@@ -9,7 +9,7 @@ const nullUser = {
   errors: []
 };
 
-const SessionReducer = (state = nullUser, action)=> {
+const SessionReducer = (state = nullUser, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
