@@ -7,12 +7,9 @@ import SplashPage from './splash_page/splash_page';
 
 const App = () => (
   <div>
-    <header>
-      <SplashPage />
-    </header>
-
     <AuthRoute path='/login' component={SessionFormContainer} />
     <AuthRoute path='/signup' component={SessionFormContainer} />
+    <Route exact path='/' component={SplashPage} />
   </div>
 );
 
