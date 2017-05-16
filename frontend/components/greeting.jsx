@@ -19,3 +19,5 @@ const personalGreeting = (currentUser, logout) => (
 const Greeting = ({ currentUser, logout }) => (
   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
 );
+
+export default Greeting;
