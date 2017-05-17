@@ -53,7 +53,7 @@
 
     13: {
       id: 13,
-      username: S_Spielberg,
+      username: 'S_Spielberg',
       email: testhater@email.org
     }
   }
