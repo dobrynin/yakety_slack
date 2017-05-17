@@ -9,7 +9,7 @@ const BottomLinks = () => (
       </li>
       <li>
         <a href='https://www.linkedin.com/in/daviddobrynin/' key={'linkedin'}>
-          <i className="fa fa-linkedin" aria-hidden="true"></i>
+          <i className="fa fa-linkedin-square" aria-hidden="true"></i>
         </a>
       </li>
       <li>
