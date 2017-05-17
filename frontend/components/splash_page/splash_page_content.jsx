@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SplashPageContent = () => (
-  <div>
+  <div className="splash-page-content">
     <h1>
       Where work happens.
     </h1>

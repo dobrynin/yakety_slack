@@ -6,8 +6,10 @@ import SplashPageFooter from './splash_page_footer/splash_page_footer';
 
 const SplashPage = () => (
   <div>
-    <SplashPageHeader />
-    <SplashPageContent />
+    <section className='hero-image'>
+      <SplashPageHeader />
+      <SplashPageContent />
+    </section>
     <SplashPageFooter />
   </div>
 );
