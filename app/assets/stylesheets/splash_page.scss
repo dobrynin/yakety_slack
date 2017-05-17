@@ -1,8 +1,11 @@
-.hero-image {
+.splash-page {
   background-image: url("/assets/yak.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.hero-image {
   height: 75vh;
 }
 
@@ -52,11 +55,11 @@
 
 .splash-page-content {
   color: #3A374B;
-  width: 45%;
+  width: 600px;
   position: relative;
   left: 10%;
   top: 20%;
-  text-shadow: 0 0 3px white;
+
   h1 {
     font-size: 75px;
     font-weight: bold;
@@ -68,20 +71,91 @@
   }
 
   a {
-    height: 50%;
-    margin: 5px;
     button {
       color: white;
-      background-color: #5B795B;
+      background-color: #7C977C;
       text-decoration: none;
       padding: 5px 10px;
       border-radius: 5px;
-      width: 250px;;
-      height: 50px;;
+      width: 250px;
+      height: 50px;
+      margin: 0;
     }
     :hover {
-      color: black;
-      border: 2px solid black;
+      background-color: #5B795B;
+      border-bottom: 2px solid #214421;
     }
   }
+
+  .splash-page-content-footer {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .link-to-sign-in {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+}
+
+
+.splash-page-footer-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #CCCCCC;
+  opacity: 0.9;
+}
+
+.splash-page-footer-wrapper {
+
+}
+
+.splash-page-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 45px;
+  margin-bottom: 30px;
+  width: 1000px;
+}
+
+.splash-page-footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column-item {
+  margin: 7px 0px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #758765;
+  :hover {
+    cursor: pointer
+  }
+}
+
+.bottom-links {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  ul {
+    width: 125px;
+    display: flex;
+    margin-right: 75px;
+    justify-content: space-between;
+  }
+  padding: 10px;
+  a {
+    color: #AAAAAA;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.bottom-links-wrapper {
+  display: flex;
+  justify-content: center;
 }

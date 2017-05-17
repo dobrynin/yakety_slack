@@ -13,6 +13,9 @@ const SplashPageContent = () => (
     <Link to='/signup'>
       <button className='get-started-button'>Get Started</button>
     </Link>
+    <p className="splash-page-content-footer">
+      Already joined a Yak team? <Link to='/login' className='link-to-sign-in'>Sign in</Link>
+    </p>
   </div>
 );
 
