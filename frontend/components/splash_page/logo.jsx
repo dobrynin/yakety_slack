@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 const Logo = () => (
   <Link to="/" className='logo'>
     <figure>
-      <img src="https://cloudinary.com/console/media_library#/dialog/image/upload/logo_rv0phd" alt="yak" />
+      <img src="http://res.cloudinary.com/dx1asdayi/image/upload/v1495054602/logo_rv0phd.png" alt="yak" />
     </figure>
   </Link>
 );
