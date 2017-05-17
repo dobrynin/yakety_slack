@@ -1,0 +1,78 @@
+.session-page-header {
+  background-color: white;
+  border-bottom: 1px solid #AAAAAA;
+  padding: 10px 0px;
+}
+
+.session-page-content {
+  background-color: #E7E7E7;
+  height: 790px;
+  display: flex;
+  justify-content: center;
+}
+
+.session-form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 75px;
+  height: 450px;
+  width: 400px;
+  border: 1px solid #AAAAAA;
+  border-radius: 5px;
+  width: 650px;
+}
+
+.session-heading {
+  font-size: 30px;
+  color: #575759;
+  margin-top: 45px;
+  text-align: center;
+}
+
+.session-sub-heading {
+  color: #575759;
+  text-align: center;
+  font-size: 15px;
+  span {
+    font-weight: bold;
+    font-size: 120%;
+  }
+}
+
+.session-form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-form-body {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+
+.session-form-input {
+  margin: 10px 0px;
+  input {
+    height: 30px;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid #AAAAAA;
+    font-size: 20px;
+    padding: 10px;
+    [placeholder] {
+      color: blue;
+    }
+  }
+}
+
+.session-inputs-wrapper {
+  margin-top: 25px;
+  [type="submit"] {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+}

@@ -4,11 +4,12 @@ import SessionFormContainer from './session_form/session_form_container';
 import { Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import SplashPage from './splash_page/splash_page';
+import SessionPage from './session_form/session_page';
 
 const App = () => (
   <div>
-    <AuthRoute path='/login' component={SessionFormContainer} />
-    <AuthRoute path='/signup' component={SessionFormContainer} />
+    <AuthRoute path='/login' component={SessionPage} />
+    <AuthRoute path='/signup' component={SessionPage} />
     <Route exact path='/' component={SplashPage} />
   </div>
 );

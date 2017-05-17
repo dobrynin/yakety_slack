@@ -35,6 +35,14 @@ class SessionForm extends React.Component {
     }
   }
 
+  heading() {
+    if (this.props.formType === 'login') {
+      return "Sign in to your team"
+    } else {
+      return "Create a new Yak account"
+    }
+  }
+
   renderErrors() {
     return(
       <ul>
@@ -47,30 +55,45 @@ class SessionForm extends React.Component {
     );
   }
 
+  submitButton() {
+    if (this.props.formType === 'login') {
+      return <input type="submit" value="Sign in" className={"green-button" + " big"} />;
+    } else {
+      return <input type="submit" value="Create account" className={"green-button" + " big"} />;
+    }
+  }
+
   render() {
     return (
       <div className='session-form-container'>
         <form onSubmit={this.handleSubmit} className='session-form-box'>
-          Welcome to Yak!
-          <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
-          <div className="session-form">
-            <label>Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className='session-input'
-              />
-            </label>
-            <label>
-              <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              className='session-input'
-              />
-            </label>
-            <input type="submit" value="Submit" />
+          <div className="session-heading">
+            { this.heading() }
+          </div>
+          <div className="session-form-body">
+            <div className="session-sub-heading">
+              Enter your Yak <span>username</span> and <span>password</span>.
+            </div>
+            {this.renderErrors()}
+            <div className="session-inputs-wrapper">
+              <div className="session-form-input">
+                  <input type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className='session-input'
+                    placeholder='username'
+                  />
+              </div>
+              <div className="session-form-input">
+                  <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className='session-input'
+                  placeholder='password'
+                  />
+              </div>
+              { this.submitButton() }
+            </div>
           </div>
         </form>
       </div>
