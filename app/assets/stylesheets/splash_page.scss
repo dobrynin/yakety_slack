@@ -1,5 +1,5 @@
 .splash-page {
-  background-image: url("/assets/yak.jpg");
+  background-image: url("http://res.cloudinary.com/dx1asdayi/image/upload/v1495054603/yak_ylwbcs.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,7 +12,6 @@
 .splash-page-header {
   display: flex;
   justify-content: space-between;
-  // background-color: #a09bc5;
   align-items: center;
   height: 50px;
 }
@@ -58,6 +57,10 @@
   position: relative;
   left: 10%;
   top: 20%;
+  background-color:rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #AAAAAA;
 
   h1 {
     font-size: 75px;

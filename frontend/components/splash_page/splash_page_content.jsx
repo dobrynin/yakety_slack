@@ -15,6 +15,14 @@ class SplashPageContent extends React.Component {
     }
   }
 
+  signInPrompt() {
+    if (!this.props.loggedIn) {
+      return (<p className="splash-page-content-footer">
+                Already joined a Yak team? <Link to='/login' className='link-to-sign-in'>Sign in</Link>
+            </p>)
+    }
+  }
+
   render() {
     return (
       <div className="splash-page-content">
@@ -26,9 +34,7 @@ class SplashPageContent extends React.Component {
           you need together so you can actually get things done.
         </p>
         { this.getStartedButton() }
-        <p className="splash-page-content-footer">
-          Already joined a Yak team? <Link to='/login' className='link-to-sign-in'>Sign in</Link>
-        </p>
+        { this.signInPrompt() }
       </div>
     )
   }

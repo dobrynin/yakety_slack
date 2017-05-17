@@ -12,3 +12,18 @@
 .big {
   width: 100%;
 }
+
+.session-button {
+  height: 50%;
+  background-color: transparent;
+  margin: 5px;
+  text-decoration: none;
+  color: #AAAAAA;
+  border: 2px solid #AAAAAA;
+  padding: 5px 10px;
+  border-radius: 5px;
+  &:hover {
+    color: black;
+    border: 2px solid black;
+  }
+}

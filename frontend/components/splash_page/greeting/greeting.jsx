@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const loginButton = (formType) => (
   formType === 'login' ? "" : (
     <button className='login-button'>
-      <Link to="/login" className='sign-up-button'>Login</Link>
+      <Link to="/login" className='session-button'>Login</Link>
     </button>
   )
 );
@@ -12,7 +12,7 @@ const loginButton = (formType) => (
 const signUpButton = (formType) => (
   formType ==='signup' ? "" : (
     <button>
-      <Link to="/signup" className='sign-up-button'>Sign Up</Link>
+      <Link to="/signup" className='session-button'>Sign Up</Link>
     </button>
   )
 );
@@ -26,8 +26,9 @@ const sessionLinks = (formType) => (
 
 const personalGreeting = (currentUser, logout) => (
   <div>
-    <h1 className="header-team-name"></h1>
-    <button className='header-button' onClick={logout}>Log Out</button>
+    <h1 className="header-team-name">
+    </h1>
+    <button className='session-button' onClick={logout}>Log Out</button>
   </div>
 );
 
