@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class SplashPageContent extends React.Component {
   getStartedButton() {
     if (this.props.loggedIn) {
-      return (<Link to='/messages'>
+      return (<Link to='/channels'>
         <button className='get-started-button'>Get Started</button>
       </Link>)
     } else {

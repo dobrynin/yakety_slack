@@ -11,6 +11,7 @@ class ChannelIndex extends React.Component {
     let { channels, direct_messages } = this.props;
     const DMs = selectDMs(channels);
     channels = selectChannels(channels);
+
     return (
     <div className='channel-index'>
       <div className='channels'>
@@ -26,7 +27,7 @@ class ChannelIndex extends React.Component {
         ))}
       </div>
     </div>
-  )}
+  );}
 }
 
 export default ChannelIndex;

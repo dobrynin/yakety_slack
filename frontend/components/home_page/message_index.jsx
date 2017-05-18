@@ -1,12 +1,34 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 // import MessageIndexHeader from './message_index_header';
 
-const MessageIndex = ({channelName, channelDescription, messages, users}) => (
-  <div>
-  </div>
-);
+class MessageIndex extends React.Component {
 
-export default MessageIndex;
+  componentDidMount() {
+    if (this.props.channelId) {
+      this.props.fetchChannelData(this.props.channelId);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.channelId !== this.props.channelId) {
+      this.props.fetchChannelData(nextProps.channelId);
+    }
+  }
+
+  render() {
+    const {channelName, channelDescription, messages, users} = this.props;
+    return (
+      <div>
+        <MessageIndexHeader />
+        {messages.map(message => <div className='message-body' key={message.id}>{message.body}</div>)}
+      </div>
+    );
+  }
+}
+
+
+export default withRouter(MessageIndex);
 
 // <MessageIndexHeader
 //   channelName={ channelName }

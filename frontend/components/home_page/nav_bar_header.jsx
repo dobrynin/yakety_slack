@@ -9,7 +9,7 @@ class NavBarHeader extends React.Component{
         <h1 className='team-name'>Yak Academy</h1>
         <h2 className='username'>{ username }</h2>
       </div>
-    )
+    );
   }
 }
 

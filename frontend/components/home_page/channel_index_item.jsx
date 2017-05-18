@@ -10,7 +10,7 @@ class ChannelIndexItem extends React.Component {
 
   handleClick() {
     const channelId = this.props.channel.id;
-    this.props.history.push(`/messages/${channelId}`);
+    this.props.history.push(`/channels/${channelId}`);
   }
 
   render() {

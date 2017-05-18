@@ -10,7 +10,7 @@ const ChannelsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CHANNEL:
-      const newChannel = {[action.channel.id]: action.channel}
+      const newChannel = {[action.channel.id]: action.channel};
       return merge({}, state, newChannel);
     case RECEIVE_CHANNELS:
       return action.channels;
@@ -21,6 +21,5 @@ const ChannelsReducer = (state = {}, action) => {
       return state;
   }
 };
-
 
 export default ChannelsReducer;
