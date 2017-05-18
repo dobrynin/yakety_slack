@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import MessageIndexHeader from './message_index_header';
+import MessageIndexHeader from './message_index_header';
 
 class MessageIndex extends React.Component {
 
@@ -20,8 +20,14 @@ class MessageIndex extends React.Component {
     const {channelName, channelDescription, messages, users} = this.props;
     return (
       <div>
-        <MessageIndexHeader />
-        {messages.map(message => <div className='message-body' key={message.id}>{message.body}</div>)}
+        <MessageIndexHeader
+          channelName={ channelName }
+          userCount={ users.length }
+          channelDescription={ channelDescription }
+          />
+        <div className='MessageIndexItems'>
+          {messages.map(message => <div className='message-body' key={message.id}>{message.body}</div>)}
+        </div>
       </div>
     );
   }
@@ -29,9 +35,3 @@ class MessageIndex extends React.Component {
 
 
 export default withRouter(MessageIndex);
-
-// <MessageIndexHeader
-//   channelName={ channelName }
-//   userCount={ users.length }
-//   channelDescription={ channelDescription }
-//   />
