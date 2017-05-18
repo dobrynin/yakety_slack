@@ -51,3 +51,7 @@ Channel.create!(
   name: 'dallashall',
   DM: true
 )
+
+Message.create!(
+
+)
