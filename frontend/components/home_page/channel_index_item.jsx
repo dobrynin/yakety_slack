@@ -18,7 +18,7 @@ class ChannelIndexItem extends React.Component {
     return (
       <div className='channel-index-item' onClick={this.handleClick}>
         <div className='channel-index-text'>
-          <span>name</span>
+          <span>{ name }</span>
         </div>
       </div>
     );

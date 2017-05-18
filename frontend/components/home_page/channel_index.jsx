@@ -9,7 +9,6 @@ class ChannelIndex extends React.Component {
 
   render() {
     const { channels } = this.props;
-    debugger
     return (
     <div>
       <h1>Channels: </h1>
