@@ -5,51 +5,111 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+require 'factory_girl'
+require 'factory_girl_rails'
+
+# FactoryGirl.define do
+#   factory :user do
+#     username { Faker::Name.unique.name }
+#     password 'password'
+#   end
+#
+#   factory :channels do
+#
+#   end
+#
+#   factory :messages do
+#     body: { Faker::ChuckNorris.fact },
+#
+#   end
+# end
+#
+# 10.times do
+#   FactoryGirl.create(:user)
+# end
 
 User.delete_all
 
-User.create!(
+demo1 = User.create!(
   username: 'demo1',
   password: 'password'
 )
 
-User.create!(
+demo2 = User.create!(
   username: 'demo2',
   password: 'password'
 )
 
-User.create!(
+demo3 = User.create!(
   username: 'demo3',
   password: 'password'
 )
 
 Channel.delete_all
 
-Channel.create!(
+channel1 = Channel.create!(
   name: '2017-03-27-sf',
   description: 'Discussion among the SF March cohort',
   DM: false,
   moderator_id: 1
 )
 
-Channel.create!(
+channel2 = Channel.create!(
   name: 'general',
   description: 'General discussion',
   DM: false,
   moderator_id: 1
 )
 
-Channel.create!(
+channel2 = Channel.create!(
   name: 'byluong',
   DM: true,
 )
 
-Channel.create!(
+dm1 = Channel.create!(
   name: 'byluong, monte47',
   DM: true
 )
 
-Channel.create!(
+dm2 = Channel.create!(
   name: 'dallashall',
   DM: true
+)
+
+Subscription.delete_all
+
+Subscription.create!(
+  user_id: demo1.id,
+  channel_id: channel1.id
+)
+
+Subscription.create!(
+  user_id: demo2.id,
+  channel_id: channel1.id
+)
+
+Subscription.create!(
+  user_id: demo3.id,
+  channel_id: channel1.id
+)
+
+Message.delete_all
+
+Message.create!(
+  body: "Zepplin 4 lyfe",
+  user_id: demo1.id,
+  channel_id: channel1.id,
+)
+
+Message.create!(
+  body: "Laura Marling is cool",
+  user_id: demo1.id,
+  channel_id: channel1.id,
+)
+
+Message.create!(
+  body: "Live love beatles",
+  user_id: demo1.id,
+  channel_id: channel1.id,
 )
