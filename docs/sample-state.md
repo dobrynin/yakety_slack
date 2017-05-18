@@ -16,7 +16,7 @@
     4: {
       id: 4,
       user_id: 5,
-      channel_id: 6
+      channel_id: 6,
       body: 'TestTestTest'
     },
 
@@ -48,13 +48,13 @@
     12: {
       id: 12,
       username: 'Ulysses',
-      email: test123email.com,
+      email: "test123email.com",
     }
 
     13: {
       id: 13,
       username: 'S_Spielberg',
-      email: testhater@email.org
+      email: "testhater@email.org"
     }
   }
 }

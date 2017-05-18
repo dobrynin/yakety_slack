@@ -10,7 +10,7 @@ class ChannelIndexItem extends React.Component {
 
   handleClick() {
     const channelId = this.props.channel.id
-    this.props.history.push(`/channels/${channelId}`);
+    this.props.history.push(`/messages/${channelId}`);
   }
 
   render() {
@@ -18,7 +18,7 @@ class ChannelIndexItem extends React.Component {
     return (
       <div className='channel-index-item' onClick={this.handleClick}>
         <div className='channel-index-text'>
-          <span>{ name }</span>
+          <p>{ name }</p>
         </div>
       </div>
     );
@@ -27,4 +27,4 @@ class ChannelIndexItem extends React.Component {
 
 
 
-export default ChannelIndexItem;
+export default withRouter(ChannelIndexItem);

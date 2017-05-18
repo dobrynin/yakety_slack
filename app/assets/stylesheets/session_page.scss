@@ -1,11 +1,11 @@
 .session-page-header {
   background-color: white;
-  border-bottom: 1px solid #AAAAAA;
+  border-bottom: 1px solid $gray;
   padding: 10px 0px;
 }
 
 .session-page-content {
-  background-color: #E7E7E7;
+  background-color: $light-gray;
   height: 790px;
   display: flex;
   justify-content: center;
@@ -18,20 +18,20 @@
   margin-top: 75px;
   height: 450px;
   width: 400px;
-  border: 1px solid #AAAAAA;
+  border: 1px solid $gray;
   border-radius: 5px;
   width: 650px;
 }
 
 .session-heading {
   font-size: 30px;
-  color: #575759;
+  color: $purple-gray;
   margin-top: 45px;
   text-align: center;
 }
 
 .session-sub-heading {
-  color: #575759;
+  color: $purple-gray;
   text-align: center;
   font-size: 15px;
   span {
@@ -60,7 +60,7 @@
     height: 30px;
     width: 400px;
     border-radius: 5px;
-    border: 1px solid #AAAAAA;
+    border: 1px solid $gray;
     font-size: 20px;
     padding: 10px;
     [placeholder] {

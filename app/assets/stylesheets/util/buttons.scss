@@ -1,6 +1,6 @@
 .green-button {
   color: white;
-  background-color: #7C977C;
+  background-color: $green;
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -18,8 +18,8 @@
   background-color: transparent;
   margin: 5px;
   text-decoration: none;
-  color: #AAAAAA;
-  border: 2px solid #AAAAAA;
+  color: $gray;
+  border: 2px solid $gray;
   padding: 5px 10px;
   border-radius: 5px;
   &:hover {
