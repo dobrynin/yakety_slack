@@ -17,14 +17,16 @@
       id: 4,
       user_id: 5,
       channel_id: 6,
-      body: 'TestTestTest'
+      body: 'TestTestTest',
+      created_at: '05-13-17'
     },
 
     7: {
       id: 7,
       user_id: 8,
       channel_id: 9,
-      body: 'MoreTests!'
+      body: 'MoreTests!',
+      created_at: '05-14-17'
     }
   }
 
