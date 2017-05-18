@@ -9,6 +9,11 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
+  has_many :subscriptions
+
+  has_many :channels,
+  through: :subcriptions
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
