@@ -50,3 +50,9 @@ q:before, q:after {
 blockquote, q {
   quotes: "" "";
 }
+
+a, button {
+  &:hover {
+    cursor: pointer;
+  }
+}

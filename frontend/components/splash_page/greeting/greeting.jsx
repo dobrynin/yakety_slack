@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 const loginButton = (formType) => (
   formType === 'login' ? "" : (
     <button className='login-button'>
@@ -17,8 +16,15 @@ const signUpButton = (formType) => (
   )
 );
 
-const sessionLinks = (formType) => (
+const demoButton = (login) => (
+  <button onClick={() => login('demo1','password')}>
+    Demo 1
+  </button>
+);
+
+const sessionLinks = (formType, login) => (
   <nav className="login-signup">
+    { demoButton(login) }
     { signUpButton(formType) }
     { loginButton(formType) }
   </nav>
@@ -32,8 +38,8 @@ const personalGreeting = (currentUser, logout) => (
   </div>
 );
 
-const Greeting = ({ currentUser, logout, formType }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(formType)
+const Greeting = ({ currentUser, logout, formType, login }) => (
+  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(formType, login)
 );
 
 export default Greeting;

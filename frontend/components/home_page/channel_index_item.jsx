@@ -9,18 +9,18 @@ class ChannelIndexItem extends React.Component {
   }
 
   handleClick() {
-    const channelId = this.props.channel.id
+    const channelId = this.props.channel.id;
     this.props.history.push(`/messages/${channelId}`);
   }
 
   render() {
     const { name, DM, moderator_id } = this.props.channel;
     return (
-      <div className='channel-index-item' onClick={this.handleClick}>
+      <a className='channel-index-item' onClick={this.handleClick}>
         <div className='channel-index-text'>
           <p>{ name }</p>
         </div>
-      </div>
+      </a>
     );
   }
 }

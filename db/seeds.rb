@@ -9,19 +9,21 @@
 User.delete_all
 
 User.create!(
-  username: 'p1',
+  username: 'demo1',
   password: 'password'
 )
 
 User.create!(
-  username: 'p2',
+  username: 'demo2',
   password: 'password'
 )
 
 User.create!(
-  username: 'p3',
+  username: 'demo3',
   password: 'password'
 )
+
+Channel.delete_all
 
 Channel.create!(
   name: '2017-03-27-sf',
@@ -50,8 +52,4 @@ Channel.create!(
 Channel.create!(
   name: 'dallashall',
   DM: true
-)
-
-Message.create!(
-
 )

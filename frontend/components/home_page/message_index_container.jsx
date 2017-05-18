@@ -3,7 +3,7 @@ import MessageIndex from './message_index';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({ messages, channels, users }) => {
-  channel = channels[location.pathname.slice(1)]
+  const channel = channels[location.pathname.slice(1)]
   return ({
     channelName: channel.name,
     channelDescription: channel.description,

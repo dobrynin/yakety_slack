@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Greeting from './greeting';
-import { logout } from '../../../actions/session_actions';
+import { logout, login } from '../../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({ session }, { location }) => ({
@@ -9,7 +9,8 @@ const mapStateToProps = ({ session }, { location }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  login: (username, password) => dispatch(login({user: {username, password}}))
 });
 
 export default withRouter(connect(
