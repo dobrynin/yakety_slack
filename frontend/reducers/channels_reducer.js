@@ -21,3 +21,6 @@ const ChannelsReducer = (state = {}, action) => {
       return state;
   }
 };
+
+
+export default ChannelsReducer;

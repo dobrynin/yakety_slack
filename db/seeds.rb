@@ -5,3 +5,49 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.delete_all
+
+User.create!(
+  username: 'p1',
+  password: 'password'
+)
+
+User.create!(
+  username: 'p2',
+  password: 'password'
+)
+
+User.create!(
+  username: 'p3',
+  password: 'password'
+)
+
+Channel.create!(
+  name: '2017-03-27-sf',
+  description: 'Discussion among the SF March cohort',
+  DM: false,
+  moderator_id: 1
+)
+
+Channel.create!(
+  name: 'general',
+  description: 'General discussion',
+  DM: false,
+  moderator_id: 1
+)
+
+Channel.create!(
+  name: 'byluong',
+  DM: true,
+)
+
+Channel.create!(
+  name: 'byluong, monte47',
+  DM: true
+)
+
+Channel.create!(
+  name: 'dallashall',
+  DM: true
+)

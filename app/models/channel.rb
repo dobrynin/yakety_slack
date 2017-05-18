@@ -1,4 +1,4 @@
 class Channel < ApplicationRecord
-  validates :name, :moderator_id, presence: true
-  validates :private, inclusion: { in: [true, false] }
+  validates :name, presence: true
+  validates :DM, inclusion: { in: [true, false] }
 end
