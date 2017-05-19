@@ -4,14 +4,11 @@ import React from 'react';
 class MessageForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      body: "",
-      userId: props.userId,
-      channelId: props.channelId
-    };
+    this.state = { body: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
+
 
   update (e) {
     this.setState({body: e.target.value});
@@ -19,7 +16,9 @@ class MessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const message = Object.assign({}, this.state);
+    const userId = this.props.userId;
+    const channelId = this.props.channelId;
+    const message = Object.assign({}, this.state, { user_id: userId, channel_id: channelId });
     this.props.createMessage(message);
   }
 

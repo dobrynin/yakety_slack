@@ -33,17 +33,20 @@ User.delete_all
 
 demo1 = User.create!(
   username: 'demo1',
-  password: 'password'
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230519/yak-29_h0oyh4.jpg'
 )
 
 demo2 = User.create!(
   username: 'demo2',
-  password: 'password'
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230518/yak-04_qm7ijs.jpg'
 )
 
 demo3 = User.create!(
   username: 'demo3',
-  password: 'password'
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230519/yak-01_gtpea1.jpg'
 )
 
 Channel.delete_all
