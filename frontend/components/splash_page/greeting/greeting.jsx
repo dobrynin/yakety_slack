@@ -17,8 +17,8 @@ const signUpButton = (formType) => (
 );
 
 const demoButton = (login) => (
-  <button onClick={() => login('demo1','password')}>
-    Demo 1
+  <button className='login-button' onClick={() => login('demo1','password')}>
+    <a>Demo 1</a>
   </button>
 );
 

@@ -37,9 +37,9 @@ class SessionForm extends React.Component {
 
   heading() {
     if (this.props.formType === 'login') {
-      return "Sign in to your team"
+      return "Sign in to your team";
     } else {
-      return "Create a new Yak account"
+      return "Create a new Yak account";
     }
   }
 

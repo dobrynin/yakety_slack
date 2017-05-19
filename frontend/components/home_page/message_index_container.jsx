@@ -11,7 +11,7 @@ const mapStateToProps = ({ messages, channels, users }, { match }) => {
     channelName: channel.name,
     channelDescription: channel.description,
     messages: asArray(messages),
-    users: asArray(users)
+    users
   });
 };
 
