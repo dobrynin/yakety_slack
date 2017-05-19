@@ -107,12 +107,12 @@ Message.create!(
 
 Message.create!(
   body: "Laura Marling is cool",
-  user_id: demo1.id,
+  user_id: demo2.id,
   channel_id: channel1.id,
 )
 
 Message.create!(
   body: "Live love beatles",
-  user_id: demo1.id,
+  user_id: demo3.id,
   channel_id: channel1.id,
 )
