@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
-require 'factory_girl'
-require 'factory_girl_rails'
+# require 'faker'
+# require 'factory_girl'
+# require 'factory_girl_rails'
 
 # FactoryGirl.define do
 #   factory :user do
