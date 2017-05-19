@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 
 
 class ChannelIndexItem extends React.Component {
@@ -16,11 +16,13 @@ class ChannelIndexItem extends React.Component {
   render() {
     const { name, DM, moderator_id } = this.props.channel;
     return (
-      <a className='channel-index-item' onClick={this.handleClick}>
+      <NavLink to={`/channels/${this.props.channel.id}`}>
+        <div className='channel-index-item'>
         <div className='channel-index-text'>
           <p>{ name }</p>
         </div>
-      </a>
+        </div>
+      </NavLink>
     );
   }
 }

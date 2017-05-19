@@ -15,13 +15,13 @@ class ChannelIndex extends React.Component {
     return (
     <div className='channel-index'>
       <div className='channels'>
-        <h1>Channels <span>({channels.length})</span></h1>
+        <h2 className='channel-index-header'>CHANNELS <span>({channels.length})</span></h2>
         {channels.map(channel => (
           <ChannelIndexItem channel={channel} key={channel.id}/>
         ))}
       </div>
       <div className='direct-messages'>
-        <h1>Direct Messages </h1>
+        <h2 className='channel-index-header'>DIRECT MESSAGES</h2>
         {DMs.map(DM => (
           <ChannelIndexItem channel={DM} key={DM.id}/>
         ))}
