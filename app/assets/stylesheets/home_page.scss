@@ -58,6 +58,7 @@ h2.channel-index-header {
 .message-index-header {
   border-bottom: 1px solid $gray;
   padding: 10px;
+  height: 60px;
 }
 
 .message-index {
@@ -102,4 +103,14 @@ h2.channel-index-header {
 
 .active p {
   color: white;
+}
+
+.message-index-items {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+.message-form-container {
+  height: 60px;
 }

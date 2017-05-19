@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import MessageIndexHeader from './message_index_header';
-
+import MessageFormContainer from './message_form_container';
 class MessageIndex extends React.Component {
 
   componentDidMount() {
@@ -25,9 +25,10 @@ class MessageIndex extends React.Component {
           userCount={ users.length }
           channelDescription={ channelDescription }
           />
-        <div className='MessageIndexItems'>
+        <div className='message-index-items'>
           {messages.map(message => <div className='message-body' key={message.id}>{message.body}</div>)}
         </div>
+        <MessageFormContainer />
       </div>
     );
   }
