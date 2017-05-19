@@ -111,8 +111,8 @@ h2.channel-index-header {
 
 .message-index-items {
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
   flex: 1;
 
   overflow: hidden;
@@ -138,11 +138,12 @@ h2.channel-index-header {
   padding-right: 10px;
 }
 
-.message-username {
+.message-header {
   font-weight: bold;
   font-size: 900;
   font-size: 13px;
   color: $dark-gray;
+  display: flex;
 }
 
 .message-body {
@@ -150,4 +151,9 @@ h2.channel-index-header {
   font-size: 15px;
   line-height: 150%;
   display: block;
+}
+
+.message-time {
+  color: $gray;
+  font-weight: 300;
 }

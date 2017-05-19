@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 import MessageIndexHeader from './message_index_header';
 import MessageFormContainer from './message_form_container.js';
 import MessageIndexItem from './message_index_item';
+import { asArray } from '../../reducers/selectors';
+
 class MessageIndex extends React.Component {
 
   componentDidMount() {
@@ -23,7 +25,7 @@ class MessageIndex extends React.Component {
       <div className='message-index'>
         <MessageIndexHeader
           channelName={ channelName }
-          userCount={ users.length }
+          userCount={ asArray(users).length }
           channelDescription={ channelDescription }
           />
         <div className='message-index-items'>
