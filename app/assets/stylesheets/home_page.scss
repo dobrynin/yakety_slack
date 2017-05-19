@@ -1,8 +1,11 @@
 .home-page-nav-bar {
   background: $purple;
   color: white;
-  width: 220px;
+  flex-basis: 220px;
+  flex-shrink: 0;
   height: 100vh;
+  min-width: 1px;
+  max-width: 260px;
 }
 
 .nav-bar-header {
@@ -35,4 +38,30 @@
   p {
     margin: 5px 0px;
   }
+}
+
+.message-body {
+  color: black;
+}
+
+.home-page {
+  display: flex;
+}
+
+.message-index-header {
+  border-bottom: 1px solid $gray;
+  padding: 10px;
+}
+
+.message-index {
+  width: 100%;
+}
+
+.message-index-header-channel-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.message-index-header-info {
+  display: flex;
 }

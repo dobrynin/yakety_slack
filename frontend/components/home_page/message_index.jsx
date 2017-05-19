@@ -19,7 +19,7 @@ class MessageIndex extends React.Component {
   render() {
     const {channelName, channelDescription, messages, users} = this.props;
     return (
-      <div>
+      <div className='message-index'>
         <MessageIndexHeader
           channelName={ channelName }
           userCount={ users.length }
