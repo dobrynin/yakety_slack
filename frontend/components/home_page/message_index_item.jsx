@@ -1,7 +1,8 @@
 import React from 'react';
-const MessageIndexItem = ({message, user}) => (
+const MessageIndexItem = ({ message, user }) => (
   <div className='message-index-item'>
     <div className='avatar-area'>
+      <img className='avatar' src={user.avatar_url} />
     </div>
     <div className='message-index-item-body'>
       <h4>{ user.username }</h4>
