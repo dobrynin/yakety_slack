@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import MessageIndexHeader from './message_index_header';
-import MessageFormContainer from './message_form_container';
+import MessageFormContainer from './message_form_container.js';
 import MessageIndexItem from './message_index_item';
 class MessageIndex extends React.Component {
 
