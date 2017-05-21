@@ -27,9 +27,7 @@
 }
 
 h2.channel-index-header {
-  padding-bottom: 10px;
-  padding-left: 15px;
-  font-size: 12px;
+
   span {
     font-weight: 300;
   }
@@ -176,4 +174,16 @@ h2.channel-index-header {
 
 .message-form {
   margin-bottom: 10px;
+}
+
+.new-channel-button {
+  background-color: $purple;
+  color: $gray;
+}
+
+.channels-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  padding-left: 15px;
 }
