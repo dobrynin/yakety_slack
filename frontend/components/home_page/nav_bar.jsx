@@ -2,6 +2,7 @@ import React from 'react';
 import ChannelIndex from './channel_index';
 import NavBarHeader from './nav_bar_header';
 
+
 class NavBar extends React.Component {
 
   render() {
