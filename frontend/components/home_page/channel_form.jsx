@@ -20,12 +20,10 @@ const customStyles = {
 class ChannelForm extends React.Component {
   constructor() {
     super();
-
     this.state = {
-      modalIsOpen: false
+      name: "",
+      description: ""
     };
-
-    this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     const appElement = document.getElementById('root');
@@ -33,12 +31,10 @@ class ChannelForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  openModal() {
-    this.setState({modalIsOpen: true});
-  }
+
 
   afterOpenModal() {
-    this.subtitle.style.color = '#f00';
+    // this.subtitle.style.color = '#f00';
   }
 
   closeModal() {
@@ -46,12 +42,12 @@ class ChannelForm extends React.Component {
   }
 
   update (property) {
-    return e => this.setState({[property]: this.target.value });
+    return e => this.setState({[property]: e.target.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const moderator_id = this.props.currentUser.username;
+    const moderator_id = this.props.userId;
     const channel = Object.assign({}, this.state, { moderator_id });
     this.props.createChannel(channel);
   }
@@ -59,7 +55,7 @@ class ChannelForm extends React.Component {
   render() {
     return(
       <Modal
-        isOpen={this.state.modalIsOpen}
+        isOpen={this.props.modalIsOpen}
         onAfterOpen={this.afterOpenModal}
         onRequestClose={this.closeModal}
         style={customStyles}
@@ -88,6 +84,7 @@ class ChannelForm extends React.Component {
                   placeholder='Channel Description'
                 />
             </div>
+            <button>Submit</button>
           </form>
       </Modal>
     );
