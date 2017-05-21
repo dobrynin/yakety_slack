@@ -6,7 +6,7 @@ export const createChannel = channel => (
   })
 );
 
-export const fetchChannels = () => (
+export const fetchChannels = (userId) => (
   $.ajax({
     method: 'GET',
     url: '/api/channels'

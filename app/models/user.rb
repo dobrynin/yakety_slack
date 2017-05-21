@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :subscriptions
 
   has_many :channels,
-  through: :subcriptions
+  through: :subscriptions
 
   def password=(password)
     @password = password

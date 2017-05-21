@@ -3,7 +3,8 @@
   currentUser: {
     id: 3,
     username: 'DapperDan',
-    email: 'user@email.com'
+    email: 'user@email.com',
+    subscriptions: [1, 2, 3]
   }
 
   forms: {

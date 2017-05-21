@@ -6,7 +6,9 @@ import {
 
 const nullUser = {
   currentUser: null,
-  errors: []
+  errors: [],
+  avatar_url: "",
+  subscriptions: [],
 };
 
 const SessionReducer = (state = nullUser, action) => {

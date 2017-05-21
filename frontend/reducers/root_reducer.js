@@ -8,7 +8,7 @@ const RootReducer = combineReducers({
   session: SessionReducer,
   channels: ChannelsReducer,
   users: UsersReducer,
-  messages: MessagesReducer
+  messages: MessagesReducer,
 });
 
 export default RootReducer;
