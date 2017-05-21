@@ -25,7 +25,6 @@ class ChannelForm extends React.Component {
       description: ""
     };
     this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
     const appElement = document.getElementById('root');
     Modal.setAppElement(appElement);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,15 +36,14 @@ class ChannelForm extends React.Component {
     // this.subtitle.style.color = '#f00';
   }
 
-  closeModal() {
-    this.setState({modalIsOpen: false});
-  }
+
 
   update (property) {
     return e => this.setState({[property]: e.target.value });
   }
 
   handleSubmit(e) {
+    this.props.closeModal();
     e.preventDefault();
     const moderator_id = this.props.userId;
     const channel = Object.assign({}, this.state, { moderator_id });
@@ -57,12 +55,12 @@ class ChannelForm extends React.Component {
       <Modal
         isOpen={this.props.modalIsOpen}
         onAfterOpen={this.afterOpenModal}
-        onRequestClose={this.closeModal}
+        onRequestClose={this.props.closeModal}
         style={customStyles}
         contentLabel="Example Modal"
         >
         <div className='escape-button-wrapper'>
-          <button onClick={this.closeModal}>
+          <button onClick={this.props.closeModal}>
             <i className="fa fa-times" aria-hidden="true"></i>
           </button>
           <div>esc</div>

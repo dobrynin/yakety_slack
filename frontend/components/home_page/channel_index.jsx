@@ -12,6 +12,7 @@ class ChannelIndex extends React.Component {
       modalIsOpen: false
     };
     this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   openModal() {
@@ -22,6 +23,10 @@ class ChannelIndex extends React.Component {
     this.props.fetchChannels();
   }
 
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
   render() {
     let { channels, direct_messages } = this.props;
     const DMs = selectDMs(channels);
@@ -29,7 +34,9 @@ class ChannelIndex extends React.Component {
 
     return (
     <div className='channel-index'>
-      <ChannelFormContainer modalIsOpen={this.state.modalIsOpen}/>
+      <ChannelFormContainer
+        modalIsOpen={this.state.modalIsOpen}
+        closeModal={this.closeModal}/>
       <div className='channels'>
         <div className='channels-header'>
           <h2 className='channel-index-header'>CHANNELS <span>({channels.length})</span></h2>
