@@ -15,5 +15,31 @@
 
 .channel-form-wrapper {
   height: 100%;
-  padding: 170px 170px 0px 170px;
+  padding-top: 170px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+}
+
+.create-channel {
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.channel-input {
+  width: 575px;
+  height: 30px;
+  font-size: 20px;
+  color: $dark-gray;
+  font-weight: 300;
+  border-radius: 5px;
+  border: 1px solid $gray;
+  padding: 10px;
+}
+
+.channel-input::placeholder {
+  font-size: inherit;
+  color: $gray;
+  font-weight: inherit;
 }

@@ -49,6 +49,7 @@ class ChannelForm extends React.Component {
     const channel = Object.assign({}, this.state, { moderator_id });
     this.props.createChannel(channel).then(({ channel }) => {
       this.props.closeModal();
+      this.setState({ name: "", description: "" });
       this.props.history.push(`/channels/${channel.id}`);
     });
   }
@@ -83,16 +84,16 @@ class ChannelForm extends React.Component {
             <div>esc</div>
           </div>
 
-          <h2 ref={this.subtitle}>Create Channel</h2>
+          <h2 className='create-channel'>Create Channel</h2>
           <form className='channel-form' onSubmit={this.handleSubmit}>
             <div className="channel-form-input">
-                <input className='channel-name-input'
+                <input className='channel-input'
                   type="text"
                   value={this.state.name}
                   onChange={this.update('name')}
                   placeholder='Channel Name'
                 />
-              <input className='channel-description-input'
+              <input className='channel-input'
                   type="text"
                   value={this.state.description}
                   onChange={this.update('description')}
