@@ -23,6 +23,10 @@
   width: 650px;
 }
 
+.session-errors {
+  color: red;
+  margin: 10px;
+}
 .session-heading {
   font-size: 30px;
   color: $purple-gray;
@@ -70,7 +74,6 @@
 }
 
 .session-inputs-wrapper {
-  margin-top: 25px;
   [type="submit"] {
     margin-top: 10px;
     font-size: 20px;

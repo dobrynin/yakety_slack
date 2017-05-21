@@ -1,5 +1,5 @@
 class Channel < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :DM, inclusion: { in: [true, false] }
 
   has_many :subscriptions

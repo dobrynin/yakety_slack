@@ -31,8 +31,6 @@ class ChannelForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
-
   afterOpenModal() {
     // this.subtitle.style.color = '#f00';
   }
@@ -44,12 +42,25 @@ class ChannelForm extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.closeModal();
     e.preventDefault();
     const moderator_id = this.props.userId;
     const channel = Object.assign({}, this.state, { moderator_id });
     this.props.createChannel(channel).then(({ channel }) => {
-      this.props.history.push(`/channels/${channel.id}`);});
+      this.props.closeModal();
+      this.props.history.push(`/channels/${channel.id}`);
+    });
+  }
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -61,6 +72,8 @@ class ChannelForm extends React.Component {
         style={customStyles}
         contentLabel="Example Modal"
         >
+
+        {this.renderErrors()}
         <div className='escape-button-wrapper'>
           <button onClick={this.props.closeModal}>
             <i className="fa fa-times" aria-hidden="true"></i>

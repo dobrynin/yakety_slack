@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import {
   RECEIVE_CURRENT_USER,
-  RECEIVE_ERRORS } from '../actions/session_actions';
+  RECEIVE_SESSION_ERRORS } from '../actions/session_actions';
 
 import {
   RECEIVE_CHANNEL
@@ -11,8 +11,6 @@ import {
 const nullUser = {
   currentUser: null,
   errors: [],
-  avatar_url: "",
-  channels: [],
 };
 
 const SessionReducer = (state = nullUser, action) => {
@@ -25,7 +23,7 @@ const SessionReducer = (state = nullUser, action) => {
       const newSubscriptions = state.currentUser.channels.concat(action.channel.id);
       const updatedUser = merge(state.currentUser, { channels: newSubscriptions });
       return merge({}, nullUser, { currentUser: updatedUser });
-    case RECEIVE_ERRORS:
+    case RECEIVE_SESSION_ERRORS:
       const errors = action.errors;
       return merge({}, nullUser, { errors });
     default:

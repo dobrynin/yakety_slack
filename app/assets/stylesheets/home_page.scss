@@ -117,7 +117,7 @@ h2.channel-index-header {
 }
 
 .message-form-container {
-  height: 60px;
+  margin: 10px;
 }
 
 .message-index-item {
@@ -161,8 +161,6 @@ h2.channel-index-header {
   width: 100%;
   input {
     flex: 1;
-    margin: 10px;
-    // height: 35px;
     border-radius: 5px;
     border: 2px solid $light-gray;
     font-size: 15px;
@@ -171,10 +169,6 @@ h2.channel-index-header {
   input::placeholder {
     color: $gray;
     }
-}
-
-.message-form {
-  margin-bottom: 10px;
 }
 
 .new-channel-button {

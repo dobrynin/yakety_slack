@@ -1,5 +1,5 @@
 export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_CHANNEL_ERRORS = 'RECEIVE_CHANNEL_ERRORS';
 export const RECEIVE_CHANNEL_DATA = 'RECEIVE_CHANNEL_DATA';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 
@@ -8,7 +8,7 @@ import * as APIUtil from '../util/channel_api_util';
 export const createChannel = channel => dispatch => (
   APIUtil.createChannel(channel)
   .then(newChannel => dispatch(receiveChannel(newChannel)),
-    err => dispatch(receiveErrors(err.responseJSON)))
+    err => dispatch(receiveChannelErrors(err.responseJSON)))
 );
 
 export const fetchChannelData = id => dispatch => (
@@ -19,7 +19,7 @@ export const fetchChannelData = id => dispatch => (
 export const fetchChannels = () => dispatch => (
   APIUtil.fetchChannels()
   .then(channels => dispatch(receiveChannels(channels)),
-    err => dispatch(receiveErrors(err.responseJSON)))
+    err => dispatch(receiveChannelErrors(err.responseJSON)))
 );
 
 const receiveChannelData = ({ users, messages }) => {
@@ -39,7 +39,7 @@ const receiveChannels = channels => ({
   channels
 });
 
-const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
+const receiveChannelErrors = errors => ({
+  type: RECEIVE_CHANNEL_ERRORS,
   errors
 });
