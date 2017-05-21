@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 const customStyles = {
   overlay : {
@@ -47,7 +48,8 @@ class ChannelForm extends React.Component {
     e.preventDefault();
     const moderator_id = this.props.userId;
     const channel = Object.assign({}, this.state, { moderator_id });
-    this.props.createChannel(channel);
+    this.props.createChannel(channel).then(({ channel }) => {
+      this.props.history.push(`/channels/${channel.id}`);});
   }
 
   render() {
@@ -89,4 +91,4 @@ class ChannelForm extends React.Component {
   }
 }
 
-export default ChannelForm;
+export default withRouter(ChannelForm);

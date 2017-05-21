@@ -5,6 +5,12 @@ import NavBarHeader from './nav_bar_header';
 
 class NavBar extends React.Component {
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.channels.length !== nextProps.channels.length) {
+
+    }
+  }
+
   render() {
 
     const {channels, fetchChannels, currentUser} = this.props;

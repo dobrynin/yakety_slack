@@ -23,6 +23,12 @@ class ChannelIndex extends React.Component {
     this.props.fetchChannels();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.channels.length !== this.props.channels.length) {
+      this.props.fetchChannels();
+    }
+  }
+
   closeModal() {
     this.setState({modalIsOpen: false});
   }
@@ -31,7 +37,6 @@ class ChannelIndex extends React.Component {
     let { channels, direct_messages } = this.props;
     const DMs = selectDMs(channels);
     channels = selectChannels(channels);
-
     return (
     <div className='channel-index'>
       <ChannelFormContainer
