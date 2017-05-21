@@ -162,10 +162,11 @@ h2.channel-index-header {
   input {
     flex: 1;
     margin: 10px;
-    height: 35px;
+    // height: 35px;
     border-radius: 5px;
     border: 2px solid $light-gray;
     font-size: 15px;
+    padding: 10px;
   }
   input::placeholder {
     color: $gray;
