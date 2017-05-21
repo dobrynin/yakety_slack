@@ -9,12 +9,14 @@ const customStyles = {
   },
 
   content : {
-    top                   : '50%',
-    left                  : '50%',
+    top                   : '0',
+    left                  : '0',
     right                 : 'auto',
     bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
+    border                : '0',
+    width                 : '100%',
+    height                : '100%',
+    padding               : '0'
   }
 };
 
@@ -72,16 +74,16 @@ class ChannelForm extends React.Component {
         style={customStyles}
         contentLabel="Example Modal"
         >
+        <div className='channel-form-wrapper'>
+          {this.renderErrors()}
+          <div className='escape-button-wrapper'>
+            <button onClick={this.props.closeModal}>
+              <i className="fa fa-times" aria-hidden="true"></i>
+            </button>
+            <div>esc</div>
+          </div>
 
-        {this.renderErrors()}
-        <div className='escape-button-wrapper'>
-          <button onClick={this.props.closeModal}>
-            <i className="fa fa-times" aria-hidden="true"></i>
-          </button>
-          <div>esc</div>
-        </div>
-
-        <h2 ref={this.subtitle}>Create Channel</h2>
+          <h2 ref={this.subtitle}>Create Channel</h2>
           <form className='channel-form' onSubmit={this.handleSubmit}>
             <div className="channel-form-input">
                 <input className='channel-name-input'
@@ -99,6 +101,7 @@ class ChannelForm extends React.Component {
             </div>
             <button>Submit</button>
           </form>
+        </div>
       </Modal>
     );
   }
