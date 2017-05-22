@@ -13,9 +13,11 @@ class ChannelIndex extends React.Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.formType = '';
   }
 
-  openModal() {
+  openModal(formType) {
+    this.formType = formType;
     this.setState({modalIsOpen: true});
   }
 
@@ -41,11 +43,12 @@ class ChannelIndex extends React.Component {
     <div className='channel-index'>
       <ChannelFormContainer
         modalIsOpen={this.state.modalIsOpen}
-        closeModal={this.closeModal}/>
+        closeModal={this.closeModal}
+        formType={this.formType}/>
       <div className='channels'>
         <div className='channels-header'>
           <h2 className='channel-index-header'>CHANNELS <span>({channels.length})</span></h2>
-          <button className='new-channel-button' onClick={this.openModal}>
+          <button className='new-channel-button' onClick={() => this.openModal('channel')}>
             <i className="fa fa-plus-circle" aria-hidden="true"></i>
           </button>
         </div>
@@ -53,8 +56,13 @@ class ChannelIndex extends React.Component {
           <ChannelIndexItem channel={channel} key={channel.id}/>
         ))}
       </div>
-      <div className='direct-messages'>
-        <h2 className='channel-index-header'>DIRECT MESSAGES</h2>
+      <div className='channels'>
+        <div className='channels-header'>
+          <h2 className='channel-index-header'>DIRECT MESSAGES</h2>
+          <button className='new-channel-button' onClick={() => this.openModal('direct-message')}>
+            <i className="fa fa-plus-circle" aria-hidden="true"></i>
+          </button>
+        </div>
         {DMs.map(DM => (
           <ChannelIndexItem channel={DM} key={DM.id}/>
         ))}

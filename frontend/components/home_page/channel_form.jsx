@@ -21,8 +21,8 @@ const customStyles = {
 };
 
 class ChannelForm extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: "",
       description: ""
@@ -66,45 +66,94 @@ class ChannelForm extends React.Component {
     );
   }
 
-  render() {
-    return(
+  renderChannelForm () {
+    return (
       <Modal
-        isOpen={this.props.modalIsOpen}
-        onAfterOpen={this.afterOpenModal}
-        onRequestClose={this.props.closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-        >
-        <div className='channel-form-wrapper'>
-          {this.renderErrors()}
-          <div className='escape-button-wrapper'>
-            <button onClick={this.props.closeModal}>
-              <i className="fa fa-times" aria-hidden="true"></i>
-            </button>
-            <div>esc</div>
-          </div>
-
-          <h2 className='create-channel'>Create Channel</h2>
-          <form className='channel-form' onSubmit={this.handleSubmit}>
-            <div className="channel-form-input">
-                <input className='channel-input'
-                  type="text"
-                  value={this.state.name}
-                  onChange={this.update('name')}
-                  placeholder='Channel Name'
-                />
-              <input className='channel-input'
-                  type="text"
-                  value={this.state.description}
-                  onChange={this.update('description')}
-                  placeholder='Channel Description'
-                />
-            </div>
-            <button>Submit</button>
-          </form>
+      isOpen={this.props.modalIsOpen}
+      onAfterOpen={this.afterOpenModal}
+      onRequestClose={this.props.closeModal}
+      style={customStyles}
+      contentLabel="New Channel Modal"
+      >
+      <div className='channel-form-wrapper'>
+        {this.renderErrors()}
+        <div className='escape-button-wrapper'>
+          <button onClick={this.props.closeModal}>
+            <i className="fa fa-times" aria-hidden="true"></i>
+          </button>
+          <div>esc</div>
         </div>
-      </Modal>
-    );
+
+        <h2 className='create-channel'>Create Channel</h2>
+        <form className='channel-form' onSubmit={this.handleSubmit}>
+          <div className="channel-form-input">
+              <input className='channel-input'
+                type="text"
+                value={this.state.name}
+                onChange={this.update('name')}
+                placeholder='Channel Name'
+              />
+            <input className='channel-input'
+                type="text"
+                value={this.state.description}
+                onChange={this.update('description')}
+                placeholder='Channel Description'
+              />
+          </div>
+          <button>Submit</button>
+        </form>
+      </div>
+    </Modal>
+  );
+  }
+
+  renderDirectMessageForm() {
+    return (
+      <Modal
+      isOpen={this.props.modalIsOpen}
+      onAfterOpen={this.afterOpenModal}
+      onRequestClose={this.props.closeModal}
+      style={customStyles}
+      contentLabel="New Channel Modal"
+      >
+      <div className='channel-form-wrapper'>
+        {this.renderErrors()}
+        <div className='escape-button-wrapper'>
+          <button onClick={this.props.closeModal}>
+            <i className="fa fa-times" aria-hidden="true"></i>
+          </button>
+          <div>esc</div>
+        </div>
+
+        <h2 className='create-channel'>Create Channel</h2>
+        <form className='channel-form' onSubmit={this.handleSubmit}>
+          <div className="channel-form-input">
+              <input className='channel-input'
+                type="text"
+                value={this.state.name}
+                onChange={this.update('name')}
+                placeholder='Channel Name'
+              />
+            <input className='channel-input'
+                type="text"
+                value={this.state.description}
+                onChange={this.update('description')}
+                placeholder='Channel Description'
+              />
+          </div>
+          <button>Submit</button>
+        </form>
+      </div>
+    </Modal>
+  );
+}
+
+  render() {
+      if (this.props.formType === 'channel') {
+        return this.renderChannelForm();
+      } else {
+        return this.renderDirectMessageForm();
+      }
   }
 }
 
