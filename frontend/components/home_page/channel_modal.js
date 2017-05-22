@@ -2,6 +2,7 @@ import React from 'react';
 import ChannelFormContainer from './channel_form_container';
 import Modal from 'react-modal';
 import DirectMessageFormContainer from './direct_message_form_container';
+import ChannelListContainer from './channel_list_container';
 
 const customStyles = {
   overlay : {
@@ -35,6 +36,8 @@ class ChannelModal extends React.Component {
         return <ChannelFormContainer closeModal={ this.props.closeModal }/>;
       case 'direct-message':
         return <DirectMessageFormContainer closeModal={ this.props.closeModal }/>;
+      case 'channel-list':
+        return <ChannelListContainer closeModal={ this.props.closeModal } />;
     }
   }
 

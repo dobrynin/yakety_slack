@@ -1,5 +1,4 @@
 import Modal from 'react-modal';
-import ReactDOM from 'react-dom';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 

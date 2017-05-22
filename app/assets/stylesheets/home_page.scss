@@ -26,8 +26,12 @@
   color: $gray;
 }
 
-h2.channel-index-header {
-
+.channel-index-header {
+  background: inherit;
+  color: inherit;
+  &:hover {
+    color: white;
+  }
   span {
     font-weight: 300;
   }
