@@ -1,11 +1,9 @@
 class Api::SubscriptionsController < ApplicationController
   def create
     subscription = Subscription.new(subscription_params)
-    if subscription.save
-      render subscription.channel
-    else
-      render json: @subscription.errors.full_messages, status: 422
-    end
+    subscription.save
+    @user = subscription.user
+    render "api/users/show"
   end
 
   private

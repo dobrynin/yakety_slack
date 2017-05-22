@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ChannelListItem from './channel_list_item';
+import ChannelListItemContainer from './channel_list_item_container';
 const customStyles = {
   overlay : {
     backgroundColor       : 'rgba(255, 255, 255, 1)'
@@ -31,7 +31,7 @@ class ChannelList extends React.Component {
 
         <h2 className='create-channel'>Browse all {this.props.channels.length} channels</h2>
         <ul className='channel-list'>
-          {this.props.channels.map( (channel, idx) => <ChannelListItem key={idx} channel={channel} />)}
+          {this.props.channels.map( (channel, idx) => <ChannelListItemContainer key={idx} channel={channel} closeModal={this.props.closeModal} />)}
         </ul>
       </div>
     );

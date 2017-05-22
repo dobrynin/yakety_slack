@@ -1,21 +1,17 @@
 import React from 'react';
-import ChannelIndex from './channel_index';
+import ChannelIndexContainer from './channel_index_container';
 import NavBarHeader from './nav_bar_header';
-
 
 class NavBar extends React.Component {
 
   render() {
 
-    const {channels, fetchChannels, currentUser} = this.props;
-    const subscriptions = channels.filter(channel => {
-      return currentUser.channels.includes(channel.id);
-    });
+    const {currentUser} = this.props;
 
     return (
         <div className='home-page-nav-bar'>
           <NavBarHeader username={currentUser.username}/>
-          <ChannelIndex channels={subscriptions} fetchChannels={fetchChannels}/>
+          <ChannelIndexContainer />
         </div>
     );
   }

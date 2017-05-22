@@ -19,7 +19,7 @@ export const signup = user => dispatch => (
         err => dispatch(receiveSessionErrors(err.responseJSON)))
 );
 
-const receiveCurrentUser = currentUser => ({
+export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
 });

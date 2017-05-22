@@ -1,9 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class ChannelListItem extends React.Component {
-  handleClick() {
-    
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.createSubscription({
+      user_id: this.props.userId,
+      channel_id: this.props.channel.id
+    }).then(() => {
+      this.props.history.push(`/channels/${this.props.channel.id}`);
+      this.props.closeModal();
+    });
   }
 
   render() {
@@ -21,4 +32,4 @@ class ChannelListItem extends React.Component {
   }
 }
 
-export default ChannelListItem;
+export default withRouter(ChannelListItem);
