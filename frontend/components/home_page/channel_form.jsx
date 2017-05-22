@@ -77,8 +77,8 @@ class ChannelForm extends React.Component {
       >
       <div className='channel-form-wrapper'>
         {this.renderErrors()}
-        <div className='escape-button-wrapper'>
-          <button onClick={this.props.closeModal}>
+        <div className='escape-button-wrapper' onClick={this.props.closeModal}>
+          <button>
             <i className="fa fa-times" aria-hidden="true"></i>
           </button>
           <div>esc</div>

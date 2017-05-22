@@ -3,14 +3,20 @@
   right: 75px;
   top: 75px;
   color: $gray;
+  width: 75px;
   button {
     color: inherit;
-    background-color: white;
+    background-color: inherit;
     font-size: 50px;
   }
   display: flex;
   flex-direction: column;
   align-items: center;
+  &:hover {
+    background-color: $light-gray;
+    border-radius: 100px;
+    cursor: pointer;
+  }
 }
 
 .channel-form-wrapper {
