@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+    get 'subscriptions/create'
+  end
+
   namespace :api, defaults: { format: :json } do
     resource :session, only: [:create, :destroy]
     resources :users, only: [:create]

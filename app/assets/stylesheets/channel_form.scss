@@ -131,6 +131,12 @@ button.direct-message-button {
   flex-direction: column;
   justify-content: space-around;
   padding: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #edf7fd;
+    border-radius: 5px;
+    border: 1px solid #d3ecfa;
+  }
 }
 
 .channel-list-item-name {
