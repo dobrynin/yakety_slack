@@ -27,17 +27,8 @@ class ChannelForm extends React.Component {
       name: "",
       description: ""
     };
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    const appElement = document.getElementById('root');
-    Modal.setAppElement(appElement);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  afterOpenModal() {
-    // this.subtitle.style.color = '#f00';
-  }
-
-
 
   update (property) {
     return e => this.setState({[property]: e.target.value });
@@ -66,15 +57,8 @@ class ChannelForm extends React.Component {
     );
   }
 
-  renderChannelForm () {
+  render() {
     return (
-      <Modal
-      isOpen={this.props.modalIsOpen}
-      onAfterOpen={this.afterOpenModal}
-      onRequestClose={this.props.closeModal}
-      style={customStyles}
-      contentLabel="New Channel Modal"
-      >
       <div className='channel-form-wrapper'>
         {this.renderErrors()}
         <div className='escape-button-wrapper' onClick={this.props.closeModal}>
@@ -103,51 +87,7 @@ class ChannelForm extends React.Component {
           <button>Submit</button>
         </form>
       </div>
-    </Modal>
-  );
-  }
-
-  renderDirectMessageForm() {
-    return (
-      <Modal
-      isOpen={this.props.modalIsOpen}
-      onAfterOpen={this.afterOpenModal}
-      onRequestClose={this.props.closeModal}
-      style={customStyles}
-      contentLabel="New Channel Modal"
-      >
-      <div className='channel-form-wrapper'>
-        {this.renderErrors()}
-        <div className='escape-button-wrapper'>
-          <button onClick={this.props.closeModal}>
-            <i className="fa fa-times" aria-hidden="true"></i>
-          </button>
-          <div>esc</div>
-        </div>
-
-        <h2 className='create-channel'>Direct Messages</h2>
-        <form className='direct-message-form' onSubmit={this.handleSubmit}>
-          <div className="direct-message-form-input">
-              <input className='direct-message-input'
-                type="text"
-                value={this.state.name}
-                onChange={this.update('name')}
-                placeholder='Find or start a conversation'
-              />
-          </div>
-          <button className='direct-message-button'>Go</button>
-        </form>
-      </div>
-    </Modal>
-  );
-}
-
-  render() {
-      if (this.props.formType === 'channel') {
-        return this.renderChannelForm();
-      } else {
-        return this.renderDirectMessageForm();
-      }
+    );
   }
 }
 

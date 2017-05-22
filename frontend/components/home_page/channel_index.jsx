@@ -2,7 +2,7 @@ import React from 'react';
 import ChannelIndexItem from './channel_index_item';
 import { selectChannels, selectDMs } from '../../reducers/selectors';
 
-import ChannelModalContainer from './channel_modal_container';
+import ChannelModal from './channel_modal';
 
 class ChannelIndex extends React.Component {
 
@@ -13,11 +13,11 @@ class ChannelIndex extends React.Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.formType = '';
+    this.modalType = '';
   }
 
-  openModal(formType) {
-    this.formType = formType;
+  openModal(modalType) {
+    this.modalType = modalType;
     this.setState({modalIsOpen: true});
   }
 
@@ -41,10 +41,10 @@ class ChannelIndex extends React.Component {
     channels = selectChannels(channels);
     return (
     <div className='channel-index'>
-      <ChannelModalContainer
+      <ChannelModal
         modalIsOpen={this.state.modalIsOpen}
         closeModal={this.closeModal}
-        formType={this.formType}/>
+        modalType={this.modalType}/>
       <div className='channels'>
         <div className='channels-header'>
           <h2 className='channel-index-header'>CHANNELS <span>({channels.length})</span></h2>
