@@ -21,7 +21,7 @@ const customStyles = {
 class ChannelList extends React.Component {
   render() {
     return(
-      <div className='channel-list-wrapper'>
+      <div className='channel-form-wrapper'>
         <div className='escape-button-wrapper' onClick={this.props.closeModal}>
           <button>
             <i className="fa fa-times" aria-hidden="true"></i>
@@ -29,7 +29,7 @@ class ChannelList extends React.Component {
           <div>esc</div>
         </div>
 
-        <h2 className='browse-channels'>Browse all {this.props.channels.length} channels</h2>
+        <h2 className='create-channel'>Browse all {this.props.channels.length} channels</h2>
         <ul className='channel-list'>
           {this.props.channels.map( (channel, idx) => <ChannelListItem key={idx} channel={channel} />)}
         </ul>

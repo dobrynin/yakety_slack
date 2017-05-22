@@ -115,3 +115,29 @@ button.direct-message-button {
   width: 60px;
   font-size: 20px;
 }
+
+.channel-list {
+  position: fixed;
+  bottom: 0;
+  top: 250px;
+  width: inherit;
+  overflow: scroll;
+}
+
+.channel-list-item {
+  border-top: 1px solid $light-gray;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.channel-list-item-name {
+  color: $dark-gray;
+}
+
+.channel-list-item-bottom-row {
+  color: $gray;
+  font-weight: 300;
+}
