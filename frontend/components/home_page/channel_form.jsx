@@ -125,23 +125,17 @@ class ChannelForm extends React.Component {
           <div>esc</div>
         </div>
 
-        <h2 className='create-channel'>Create Channel</h2>
-        <form className='channel-form' onSubmit={this.handleSubmit}>
-          <div className="channel-form-input">
-              <input className='channel-input'
+        <h2 className='create-channel'>Direct Messages</h2>
+        <form className='direct-message-form' onSubmit={this.handleSubmit}>
+          <div className="direct-message-form-input">
+              <input className='direct-message-input'
                 type="text"
                 value={this.state.name}
                 onChange={this.update('name')}
-                placeholder='Channel Name'
-              />
-            <input className='channel-input'
-                type="text"
-                value={this.state.description}
-                onChange={this.update('description')}
-                placeholder='Channel Description'
+                placeholder='Find or start a conversation'
               />
           </div>
-          <button>Submit</button>
+          <button className='direct-message-button'>Go</button>
         </form>
       </div>
     </Modal>
