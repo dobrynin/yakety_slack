@@ -19,7 +19,9 @@ class MessageForm extends React.Component {
     const userId = this.props.userId;
     const channelId = this.props.channelId;
     const message = Object.assign({}, this.state, { user_id: userId, channel_id: channelId });
-    this.props.createMessage(message);
+    this.props.createMessage(message).then(
+      () => this.setState({ body: "" })
+    );
   }
 
   render() {
