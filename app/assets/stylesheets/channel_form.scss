@@ -38,8 +38,33 @@
   padding: 10px;
 }
 
+.channel-form-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 110px;
+}
+
 .channel-input::placeholder {
   font-size: inherit;
   color: $gray;
   font-weight: inherit;
+}
+
+.channel-form {
+  button {
+    background-color: $green;
+    margin-top: 10px;
+    width: 597px;
+    height: 50px;
+    color: white;
+    border-radius: 5px;
+    &:hover {
+      background-color: $dark-green;
+      border-bottom: 5px solid $darkest-green;
+    }
+    &:active {
+      border-bottom: 3px solid #072607;
+    }
+  }
 }
