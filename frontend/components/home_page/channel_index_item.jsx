@@ -18,7 +18,7 @@ class ChannelIndexItem extends React.Component {
     return (
       <NavLink to={`/channels/${this.props.channel.id}`}>
         <div className='channel-index-item'>
-        <div className='channel-index-text' onClick={this.props.passed}>
+        <div className='channel-index-text'>
           <p>{ name }</p>
         </div>
         </div>

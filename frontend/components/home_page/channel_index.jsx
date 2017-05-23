@@ -13,34 +13,7 @@ class ChannelIndex extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.modalType = '';
-    this.setSocket = this.setSocket.bind(this);
-    this.removeSocket = this.removeSocket.bind(this);
-    this.addSocket = this.addSocket.bind(this);
-  }
 
-  setSocket(channelId) {
-    return e => {
-      if (window.App.channel) {
-        this.removeSocket();
-      }
-      this.addSocket(channelId);
-  };
-
-  }
-
-  removeSocket() {
-    window.App.cable.subscriptions.remove(window.App.channel);
-  }
-
-  addSocket(channelId) {
-    window.App.channel = window.App.cable.subscriptions.create({
-      channel: 'MessagesChannel',
-      channel_id: channelId
-    }, {
-      connected: () => { },
-      disconnected: () => {},
-      received: data => this.props.receiveMessage(data)
-    });
   }
 
   openModal(modalType) {
@@ -80,7 +53,7 @@ class ChannelIndex extends React.Component {
           </button>
         </div>
         {channels.map(channel => (
-          <ChannelIndexItem channel={channel} key={channel.id} passed={this.setSocket(channel.id)}/>
+          <ChannelIndexItem channel={channel} key={channel.id}/>
         ))}
       </div>
       <div className='channels'>

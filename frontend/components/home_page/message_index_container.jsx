@@ -3,6 +3,7 @@ import MessageIndex from './message_index';
 import { withRouter } from 'react-router-dom';
 import { asArray } from '../../reducers/selectors';
 import { fetchChannelData } from '../../actions/channel_actions';
+import { receiveMessage } from '../../actions/message_actions';
 
 const mapStateToProps = ({ messages, channels, users }, { match }) => {
   const channel = channels[match.params.channelId] || {};
@@ -16,7 +17,10 @@ const mapStateToProps = ({ messages, channels, users }, { match }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchChannelData: (id) => dispatch(fetchChannelData(id))
+  fetchChannelData: (id) => dispatch(fetchChannelData(id)),
+  receiveMessage: message => {
+    return dispatch(receiveMessage(message));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageIndex);

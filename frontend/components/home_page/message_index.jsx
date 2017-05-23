@@ -7,6 +7,35 @@ import { asArray } from '../../reducers/selectors';
 
 class MessageIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.setSocket = this.setSocket.bind(this);
+    this.removeSocket = this.removeSocket.bind(this);
+    this.addSocket = this.addSocket.bind(this);
+  }
+
+  setSocket(channelId) {
+    if (window.App.channel) {
+      this.removeSocket();
+    }
+    this.addSocket(channelId);
+  }
+
+  removeSocket() {
+    window.App.cable.subscriptions.remove(window.App.channel);
+  }
+
+  addSocket(channelId) {
+    window.App.channel = window.App.cable.subscriptions.create({
+      channel: 'MessagesChannel',
+      channel_id: channelId
+    }, {
+      connected: () => { },
+      disconnected: () => {},
+      received: data => this.props.receiveMessage(data)
+    });
+  }
+
   componentDidMount() {
     if (this.props.channelId) {
       this.props.fetchChannelData(this.props.channelId);
@@ -16,6 +45,7 @@ class MessageIndex extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.channelId !== this.props.channelId) {
       this.props.fetchChannelData(nextProps.channelId);
+      this.setSocket(nextProps.channelId);
     }
   }
 
