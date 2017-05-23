@@ -19,14 +19,12 @@ class ChannelIndex extends React.Component {
   }
 
   setSocket(channelId) {
-    return (
-      () => {
-        if (window.App.channel) {
+    return e => {
+      if (window.App.channel) {
         this.removeSocket();
       }
       this.addSocket(channelId);
-    }
-  );
+  };
 
   }
 
@@ -82,7 +80,7 @@ class ChannelIndex extends React.Component {
           </button>
         </div>
         {channels.map(channel => (
-          <ChannelIndexItem channel={channel} key={channel.id} onClick={this.setSocket(channel.id)}/>
+          <ChannelIndexItem channel={channel} key={channel.id} passed={this.setSocket(channel.id)}/>
         ))}
       </div>
       <div className='channels'>
