@@ -1,7 +1,7 @@
 import Modal from 'react-modal';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
+import UserListItemContainer from './user_list_item_container';
 const customStyles = {
   overlay : {
     backgroundColor       : 'rgba(255, 255, 255, 1)'
@@ -72,6 +72,9 @@ class DirectMessageForm extends React.Component {
         </div>
         <button className='direct-message-button'>Go</button>
       </form>
+      <ul className='user-list'>
+        {this.props.allUsers.map( (user, idx) => <UserListItemContainer key={idx} user={user} />)}
+      </ul>
     </div>
   );
 }
