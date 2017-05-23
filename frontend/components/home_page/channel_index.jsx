@@ -1,7 +1,6 @@
 import React from 'react';
 import ChannelIndexItem from './channel_index_item';
 import { selectChannels, selectDMs } from '../../reducers/selectors';
-
 import ChannelModal from './channel_modal';
 
 class ChannelIndex extends React.Component {
@@ -14,6 +13,34 @@ class ChannelIndex extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.modalType = '';
+    this.update = this.update.bind(this);
+    this.setSocket = this.setSocket.bind(this);
+  }
+
+  update(data) {
+    this.props.receiveMessage(data);
+  }
+
+  setSocket(channelId) {
+    if (window.App.channel) {
+      this.removeSocket();
+    }
+    this.addSocket(channelId);
+  }
+
+  removeSocket() {
+    window.App.cable.subscriptions.remove(window.App.channel);
+  }
+
+  addSocket(channelId) {
+    window.App.channel = window.App.cable.subscriptions.create({
+      channel: 'MessagesChannel',
+      channel_id: channelId
+    }, {
+      connected: () => { },
+      disconnected: () => {},
+      received: data => this.update(data)
+    });
   }
 
   openModal(modalType) {
@@ -53,7 +80,7 @@ class ChannelIndex extends React.Component {
           </button>
         </div>
         {channels.map(channel => (
-          <ChannelIndexItem channel={channel} key={channel.id}/>
+          <ChannelIndexItem channel={channel} key={channel.id} onClick={this.setSocket(channel.id)}/>
         ))}
       </div>
       <div className='channels'>
