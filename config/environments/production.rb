@@ -85,4 +85,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.web_socket_server_url = 'wss://yakety-slack.herokuapp.com/cable'
+  config.action_cable.disable_request_forgery_protection = true
+  config.active_record.dump_schema_after_migration = false
 end
