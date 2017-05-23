@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :api do
-    get 'subscriptions/create'
-  end
+  mount ActionCable.server => '/cable'
 
   namespace :api, defaults: { format: :json } do
     resources :subscriptions, only: [:create]

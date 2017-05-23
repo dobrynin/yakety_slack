@@ -22,13 +22,13 @@ class MessageIndex extends React.Component {
   render() {
     const {channelName, channelDescription, messages, users} = this.props;
     return (
-      <div className='message-index'>
+      <div className='message-index' >
         <MessageIndexHeader
           channelName={ channelName }
           userCount={ asArray(users).length }
           channelDescription={ channelDescription }
           />
-        <div className='message-index-items'>
+        <div className='message-index-items' id='message-index-items'>
           {messages.map(message => (
             <MessageIndexItem
               key={message.id}

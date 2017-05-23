@@ -3,7 +3,12 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
-      render :show
+      ActionCable.server.broadcast 'messages',
+        id: @message.id,
+        body: @message.body,
+        user_id: @message.user_id,
+        created_at: @message.created_at
+      head :ok
     else
       render json: @message, status: :unprocessable_entity
     end
