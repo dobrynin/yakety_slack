@@ -3,7 +3,11 @@ class MessagesChannel < ApplicationCable::Channel
     stream_from "channel_#{params[:channel_id]}"
   end
 
-  def unsubscribe
-    stop_all_streams
+  def receive(data)
+    ActionCable.server.broadcast("channel_#{params[:channel_id]}", data)
   end
+
+  # def unsubscribe
+  #   stop_all_streams
+  # end
 end

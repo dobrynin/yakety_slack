@@ -17,7 +17,6 @@ const mapStateToProps = ({ session, channels }) => {
 const mapDispatchToProps = dispatch => ({
   fetchChannels: () => dispatch(fetchChannels()),
   receiveMessage: message => {
-    debugger;
     return dispatch(receiveMessage(message));
   }
 });

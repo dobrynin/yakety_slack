@@ -13,19 +13,21 @@ class ChannelIndex extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.modalType = '';
-    this.update = this.update.bind(this);
     this.setSocket = this.setSocket.bind(this);
-  }
-
-  update(data) {
-    this.props.receiveMessage(data);
+    this.removeSocket = this.removeSocket.bind(this);
+    this.addSocket = this.addSocket.bind(this);
   }
 
   setSocket(channelId) {
-    if (window.App.channel) {
-      this.removeSocket();
+    return (
+      () => {
+        if (window.App.channel) {
+        this.removeSocket();
+      }
+      this.addSocket(channelId);
     }
-    this.addSocket(channelId);
+  );
+
   }
 
   removeSocket() {
@@ -39,7 +41,7 @@ class ChannelIndex extends React.Component {
     }, {
       connected: () => { },
       disconnected: () => {},
-      received: data => this.update(data)
+      received: data => this.props.receiveMessage(data)
     });
   }
 
