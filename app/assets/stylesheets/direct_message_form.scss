@@ -1,9 +1,7 @@
 .user-list {
-  position: fixed;
-  bottom: 0;
-  top: 350px;
   width: inherit;
   overflow: scroll;
+  margin-top: 30px;
 }
 
 .user-list-item {

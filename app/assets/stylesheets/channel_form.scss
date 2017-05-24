@@ -25,6 +25,8 @@
   margin-left: auto;
   margin-right: auto;
   width: 650px;
+  display: flex;
+  flex-direction: column;
 }
 
 .create-channel {
@@ -45,16 +47,56 @@
 }
 
 .direct-message-input {
-  width: 540px;
-  height: 30px;
+  // width: 540px;
+  height: inherit;
+  padding: 0;
+  border: 0;
   font-size: 20px;
   color: $dark-gray;
   font-weight: 300;
+  // padding: 10px;
+  flex: 1;
+
+
+}
+
+.selected-users-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.selected-user-item {
+  background-color: #2D9EE0;
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  padding: 1px;
+  margin: 0px 5px 5px 0px;
+  img {
+    width: 25px;
+    border-radius: 5px;
+  }
+  div {
+    padding: 5px;
+  }
+  i {
+    padding: 2px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.direct-message-search-box {
+  width: 560px;
   border-radius: 5px;
   border: 1px solid $gray;
   padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
-
 .channel-form-input {
   display: flex;
   flex-direction: column;
@@ -114,6 +156,12 @@
 button.direct-message-button {
   width: 60px;
   font-size: 20px;
+  background-color: #2ab27b;
+  &:hover {
+    border-bottom: 2px solid #20865d;
+    color: white;
+    background-color: #2ab27b;
+  }
 }
 
 .channel-list {
