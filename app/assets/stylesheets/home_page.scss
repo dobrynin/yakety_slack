@@ -112,12 +112,11 @@
 }
 
 .message-index-items {
-  display: flex;
   flex-direction: column;
   justify-content: flex-end;
   flex: 1;
 
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .message-form-container {
@@ -127,6 +126,7 @@
 .message-index-item {
   display: flex;
   margin: 8px 0;
+
 }
 
 .avatar {

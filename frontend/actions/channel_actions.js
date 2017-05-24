@@ -11,6 +11,12 @@ export const createChannel = channel => dispatch => (
     err => dispatch(receiveChannelErrors(err.responseJSON)))
 );
 
+export const createDM = DM => dispatch => (
+  APIUtil.createDM(DM)
+  .then(newDM => dispatch(receiveChannel(newDM)),
+    err => dispatch(receiveChannelErrors(err.responseJSON)))
+);
+
 export const fetchChannelData = id => dispatch => (
   APIUtil.fetchChannelData(id)
   .then(data => dispatch(receiveChannelData(data)))
@@ -22,12 +28,11 @@ export const fetchChannels = () => dispatch => (
     err => dispatch(receiveChannelErrors(err.responseJSON)))
 );
 
-const receiveChannelData = ({ users, messages }) => {
-  return({
+const receiveChannelData = ({ users, messages }) => ({
   type: RECEIVE_CHANNEL_DATA,
   users,
   messages
-});};
+});
 
 const receiveChannel = channel => ({
   type: RECEIVE_CHANNEL,

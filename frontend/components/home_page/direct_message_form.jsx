@@ -44,6 +44,15 @@ class DirectMessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    const direct_message = {
+      user_ids: [this.props.userId].concat(this.state.selectedUsers.map(user => user.id)),
+    };
+
+    this.props.createDM(direct_message).then(({ channel }) => {
+      this.props.closeModal();
+      this.props.history.push(`/channels/${channel.id}`);
+    });
   }
 
   renderErrors() {
@@ -113,4 +122,4 @@ class DirectMessageForm extends React.Component {
 }
 }
 
-export default DirectMessageForm;
+export default withRouter(DirectMessageForm);

@@ -19,3 +19,11 @@ export const fetchChannelData = id => (
     url: `/api/channels/${id}`
   })
 );
+
+export const createDM = direct_message => (
+  $.ajax({
+    method: 'POST',
+    url: '/api/direct_messages',
+    data: { direct_message }
+  })
+);

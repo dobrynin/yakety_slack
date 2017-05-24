@@ -39,6 +39,7 @@ class MessageIndex extends React.Component {
   componentDidMount() {
     this.props.fetchChannelData(this.props.channelId);
     this.props.fetchAllUsers();
+    this.scrollToBottom();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -47,6 +48,15 @@ class MessageIndex extends React.Component {
       this.props.fetchAllUsers();
       this.setSocket(nextProps.channelId);
     }
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom() {
+    const objDiv= document.getElementById('message-index-items');
+    objDiv.scrollTop = objDiv.scrollHeight;
   }
 
   render() {

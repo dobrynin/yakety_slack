@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import DirectMessageForm from './direct_message_form';
-import { createChannel } from '../../actions/channel_actions';
+import { createDM } from '../../actions/channel_actions';
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = ({ session, channels, allUsers }) => ({
@@ -10,7 +10,7 @@ const mapStateToProps = ({ session, channels, allUsers }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createChannel: channel => dispatch(createChannel(channel))
+  createDM: direct_message => dispatch(createDM(direct_message))
 });
 
 export default connect(
