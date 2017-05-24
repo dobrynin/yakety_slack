@@ -73,7 +73,11 @@ class DirectMessageForm extends React.Component {
         <button className='direct-message-button'>Go</button>
       </form>
       <ul className='user-list'>
-        {this.props.allUsers.map( (user, idx) => <UserListItemContainer key={idx} user={user} />)}
+        {this.props.allUsers.map( (user, idx) => {
+          if (user.id !== this.props.userId && user.username.startsWith(this.state.name)) {
+            return <UserListItemContainer key={idx} user={user} />
+          }
+        })}
       </ul>
     </div>
   );
