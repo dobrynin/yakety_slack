@@ -2,14 +2,15 @@ import { withRouter, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import React from 'react';
 
-const Auth = ({component: Component, path, loggedIn}) => (
-  <Route path={path} render={(props) => (
+const Auth = ({component: Component, path, loggedIn, defaultChannelId}) => (
+  <Route path={path} render={(props) => {
+        return (
     !loggedIn ? (
       <Component {...props} />
       ) : (
-      <Redirect to='/' />
+      <Redirect to={`/channels/${defaultChannelId}`} />
     )
-  )}/>
+  );}}/>
 );
 
 const Protected = ({component: Component, path, loggedIn}) => (
@@ -22,8 +23,9 @@ const Protected = ({component: Component, path, loggedIn}) => (
     )}/>
 );
 
-const mapStateToProps = state => ({
-  loggedIn: Boolean(state.session.currentUser)
+const mapStateToProps = ({ session }) => ({
+  loggedIn: Boolean(session.currentUser),
+  defaultChannelId: session.currentUser ? session.currentUser.channels[0] : null
 });
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
