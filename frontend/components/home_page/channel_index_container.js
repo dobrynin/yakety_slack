@@ -9,7 +9,8 @@ const mapStateToProps = ({ session, channels }) => {
   });
   return ({
     channels: subscriptions,
-    allChannels: asArray(channels)
+    allChannels: asArray(channels),
+    currentUser: session.currentUser
   });
 };
 

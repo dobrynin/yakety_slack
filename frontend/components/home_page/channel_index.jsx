@@ -36,7 +36,7 @@ class ChannelIndex extends React.Component {
   }
 
   render() {
-    let { channels, direct_messages } = this.props;
+    let { channels, direct_messages, currentUser } = this.props;
     const DMs = selectDMs(channels);
     channels = selectChannels(channels);
     return (
@@ -64,7 +64,7 @@ class ChannelIndex extends React.Component {
           </button>
         </div>
         {DMs.map(DM => (
-          <ChannelIndexItem channel={DM} key={DM.id}/>
+          <ChannelIndexItem currentUser={currentUser} channel={DM} key={DM.id}/>
         ))}
       </div>
     </div>

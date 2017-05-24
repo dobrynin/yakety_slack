@@ -13,13 +13,23 @@ class ChannelIndexItem extends React.Component {
     this.props.history.push(`/channels/${channelId}`);
   }
 
+  handleName(channel) {
+    if (channel.DM) {
+      const splitNames = channel.name.split(", ");
+      const idx = splitNames.indexOf(this.props.currentUser.username);
+      splitNames.splice(idx, 1);
+      return splitNames.join(', ');
+    } else {
+      return channel.name;
+    }
+  }
+
   render() {
-    const { name, DM, moderator_id } = this.props.channel;
     return (
       <NavLink to={`/channels/${this.props.channel.id}`}>
         <div className='channel-index-item'>
         <div className='channel-index-text'>
-          <p>{ name }</p>
+          <p>{ this.handleName(this.props.channel) }</p>
         </div>
         </div>
       </NavLink>
