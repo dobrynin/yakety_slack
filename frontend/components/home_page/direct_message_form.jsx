@@ -23,14 +23,19 @@ class DirectMessageForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: "",
+      users: this.props.allUsers,
+      selectedUsers: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
 
   update(e) {
-    this.setState({ name: e.target.value });
+    const newUsers = this.props.allUsers.filter(user => {
+      return user.username.startsWith(e.target.value) && !this.state.selectedUsers.includes(user.username);
+    });
+    this.setState({ name: e.target.value, users: newUsers });
   }
 
   handleSubmit(e) {
@@ -73,9 +78,9 @@ class DirectMessageForm extends React.Component {
         <button className='direct-message-button'>Go</button>
       </form>
       <ul className='user-list'>
-        {this.props.allUsers.map( (user, idx) => {
-          if (user.id !== this.props.userId && user.username.startsWith(this.state.name)) {
-            return <UserListItemContainer key={idx} user={user} />
+        {this.state.users.map( (user, idx) => {
+          if (user.id !== this.props.userId) {
+            return <UserListItemContainer key={idx} user={user} />;
           }
         })}
       </ul>
