@@ -13,7 +13,18 @@ class ChannelIndex extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.modalType = '';
+    this.addSocket = this.addSocket.bind(this);
+  }
 
+  addSocket() {
+    window.App.cable.subscriptions.create({
+      channel: 'ChannelsChannel',
+      user_id: this.props.currentUser.id
+    }, {
+      connected: () => {},
+      disconnected: () => {},
+      received: channel => this.props.receiveChannel(channel)
+    });
   }
 
   openModal(modalType) {
@@ -22,6 +33,7 @@ class ChannelIndex extends React.Component {
   }
 
   componentDidMount() {
+    this.addSocket();
     this.props.fetchChannels();
   }
 

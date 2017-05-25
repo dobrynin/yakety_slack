@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchChannels } from '../../actions/channel_actions';
+import { fetchChannels, receiveChannel } from '../../actions/channel_actions';
 import ChannelIndex from './channel_index';
 import { asArray } from '../../reducers/selectors';
 
@@ -15,7 +15,8 @@ const mapStateToProps = ({ session, channels }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchChannels: () => dispatch(fetchChannels())
+  fetchChannels: () => dispatch(fetchChannels()),
+  receiveChannel: channel => dispatch(receiveChannel(channel))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChannelIndex);

@@ -34,7 +34,7 @@ const receiveChannelData = ({ users, messages }) => ({
   messages
 });
 
-const receiveChannel = channel => ({
+export const receiveChannel = channel => ({
   type: RECEIVE_CHANNEL,
   channel
 });
