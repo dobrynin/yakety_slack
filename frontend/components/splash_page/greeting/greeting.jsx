@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+
 const loginButton = (formType) => (
   formType === 'login' ? "" : (
     <button className='login-button'>
@@ -16,15 +17,15 @@ const signUpButton = (formType) => (
   )
 );
 
-const demoButton = (login) => (
-  <button className='login-button' onClick={() => login('demo1','password')}>
+const demoButton = (login, history) => (
+  <button className='login-button' onClick={() => login('demo1','password').then(() => history.push('/channels/'))}>
     <a>Demo 1</a>
   </button>
 );
 
-const sessionLinks = (formType, login) => (
+const sessionLinks = (formType, login, history) => (
   <nav className="login-signup">
-    { demoButton(login) }
+    { demoButton(login, history) }
     { signUpButton(formType) }
     { loginButton(formType) }
   </nav>
@@ -38,8 +39,8 @@ const personalGreeting = (currentUser, logout) => (
   </div>
 );
 
-const Greeting = ({ currentUser, logout, formType, login }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(formType, login)
+const Greeting = ({ currentUser, logout, formType, login, history }) => (
+  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(formType, login, history)
 );
 
-export default Greeting;
+export default withRouter(Greeting);

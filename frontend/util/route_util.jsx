@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import React from 'react';
 
 const Auth = ({component: Component, path, loggedIn, defaultChannelId}) => (
-  <Route path={path} render={(props) => {
+  <Route path={path} render={props => {
         return (
     !loggedIn ? (
       <Component {...props} />
       ) : (
-      <Redirect to={`/channels/${defaultChannelId}`} />
+      defaultChannelId ? <Redirect to={`/channels/${defaultChannelId}`} /> : <Redirect to={`/channels/`} />
     )
   );}}/>
 );
