@@ -32,22 +32,66 @@
 User.delete_all
 
 demo1 = User.create!(
-  username: 'demo1',
+  username: 'noah',
   password: 'password',
-  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230519/yak-29_h0oyh4.jpg'
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230519/Bos_grunniens_at_Yundrok_Yumtso_Lake_f5vb5q.jpg'
 )
 
 demo2 = User.create!(
-  username: 'demo2',
+  username: 'emma',
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230517/28037_1449878006_220_28037_f4xryu.jpg'
+)
+
+demo3 = User.create!(
+  username: 'liam',
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230517/188540-004-9F52B89C_htzcg9.jpg'
+)
+
+demo4 = User.create!(
+  username: 'olivia',
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230519/yak_cow_and_calf_N023_goqxbv.jpg'
+)
+
+demo5 = User.create!(
+  username: 'william',
   password: 'password',
   avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230518/yak-04_qm7ijs.jpg'
 )
 
-demo3 = User.create!(
-  username: 'demo3',
+demo6 = User.create!(
+  username: 'ava',
   password: 'password',
-  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230519/yak-01_gtpea1.jpg'
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230518/yak-04_qm7ijs.jpg'
 )
+
+demo7 = User.create!(
+  username: 'mason',
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230518/yak-04_qm7ijs.jpg'
+)
+
+demo8 = User.create!(
+  username: 'sophia',
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230518/yak-04_qm7ijs.jpg'
+)
+
+demo9 = User.create!(
+  username: 'james',
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230518/yak-04_qm7ijs.jpg'
+)
+
+demo10 = User.create!(
+  username: 'isabella',
+  password: 'password',
+  avatar_url: 'http://res.cloudinary.com/dx1asdayi/image/upload/v1495230518/yak-04_qm7ijs.jpg'
+)
+
+
 
 Channel.delete_all
 
