@@ -98,13 +98,6 @@ demo10 = User.create!(
 Channel.delete_all
 
 channel1 = Channel.create!(
-  name: '2017-03-27-sf',
-  description: 'Discussion among the SF March cohort',
-  DM: false,
-  moderator_id: 1
-)
-
-channel2 = Channel.create!(
   name: 'general',
   description: 'General discussion',
   DM: false,
@@ -112,16 +105,23 @@ channel2 = Channel.create!(
 )
 
 channel2 = Channel.create!(
+  name: '2017-03-27-sf',
+  description: 'Discussion among the SF March cohort',
+  DM: false,
+  moderator_id: 1
+)
+
+dm1 = Channel.create!(
   name: 'byluong',
   DM: true,
 )
 
-dm1 = Channel.create!(
+dm2 = Channel.create!(
   name: 'byluong, monte47',
   DM: true
 )
 
-dm2 = Channel.create!(
+dm3 = Channel.create!(
   name: 'dallashall',
   DM: true
 )
@@ -140,6 +140,41 @@ Subscription.create!(
 
 Subscription.create!(
   user_id: demo3.id,
+  channel_id: channel1.id
+)
+
+Subscription.create!(
+  user_id: demo4.id,
+  channel_id: channel1.id
+)
+
+Subscription.create!(
+  user_id: demo5.id,
+  channel_id: channel1.id
+)
+
+Subscription.create!(
+  user_id: demo6.id,
+  channel_id: channel1.id
+)
+
+Subscription.create!(
+  user_id: demo7.id,
+  channel_id: channel1.id
+)
+
+Subscription.create!(
+  user_id: demo8.id,
+  channel_id: channel1.id
+)
+
+Subscription.create!(
+  user_id: demo9.id,
+  channel_id: channel1.id
+)
+
+Subscription.create!(
+  user_id: demo10.id,
   channel_id: channel1.id
 )
 

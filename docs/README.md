@@ -1,4 +1,4 @@
-# FresherNote
+# Yak
 
 [Heroku link][heroku]
 
