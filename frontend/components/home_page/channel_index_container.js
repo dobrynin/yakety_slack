@@ -12,7 +12,7 @@ const mapStateToProps = ({ session, channels, notifications }) => {
     channels: subscriptions,
     allChannels: asArray(channels),
     currentUser: session.currentUser,
-    notifications,
+    notifications
   });
 };
 

@@ -18,7 +18,7 @@ const signUpButton = (formType) => (
 );
 
 const demoButton = (login, history) => (
-  <button className='login-button' onClick={() => login('demo1','password').then(() => history.push('/channels/'))}>
+  <button className='login-button' onClick={() => login('noah','password').then(() => history.push('/channels/'))}>
     <a>Demo 1</a>
   </button>
 );

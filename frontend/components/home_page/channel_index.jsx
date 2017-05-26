@@ -40,10 +40,10 @@ class ChannelIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.channels.length !== this.props.channels.length) {
+    if (nextProps.allChannels.length !== this.props.allChannels.length) {
       this.props.fetchChannels();
     }
-    if (nextProps.location.pathname != this.props.location.pathname) {
+    if (nextProps.location.pathname !== this.props.location.pathname) {
       const channelId = parseInt(nextProps.location.pathname.replace('/channels/', ''));
       this.props.deleteNotifications(this.props.currentUser.id, channelId);
     }
@@ -65,7 +65,7 @@ class ChannelIndex extends React.Component {
         modalType={this.modalType}/>
       <div className='channels'>
         <div className='channels-header'>
-          <button className='channel-index-header' onClick={() => this.openModal('channel-list')}>CHANNELS <span>({this.props.allChannels.length})</span></button>
+          <button className='channel-index-header' onClick={() => this.openModal('channel-list')}>CHANNELS <span>({channels.length})</span></button>
           <button className='new-channel-button' onClick={() => this.openModal('channel')}>
             <i className="fa fa-plus-circle" aria-hidden="true"></i>
           </button>
