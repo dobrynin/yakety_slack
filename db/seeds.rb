@@ -29,6 +29,8 @@
 #   FactoryGirl.create(:user)
 # end
 
+Notification.destroy_all
+
 User.delete_all
 
 demo1 = User.create!(

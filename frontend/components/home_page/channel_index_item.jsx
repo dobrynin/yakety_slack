@@ -24,13 +24,21 @@ class ChannelIndexItem extends React.Component {
     }
   }
 
+  channelClassName() {
+    if (this.props.notifications[this.props.channel.id] > 0) {
+      return "channel-index-text bolded";
+    } else {
+      return "channel-index-text";
+    }
+  }
+
   render() {
     return (
       <NavLink to={`/channels/${this.props.channel.id}`}>
         <div className='channel-index-item'>
-        <div className='channel-index-text'>
-          <p>{ this.handleName(this.props.channel) }</p>
-        </div>
+          <div className={this.channelClassName()}>
+            <p>{ this.handleName(this.props.channel) }</p>
+          </div>
         </div>
       </NavLink>
     );

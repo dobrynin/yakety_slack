@@ -47,6 +47,7 @@ class MessageIndex extends React.Component {
       this.props.fetchAllUsers();
       this.setSocket(nextProps.channelId);
     }
+
   }
 
   componentDidUpdate() {

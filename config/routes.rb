@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :direct_messages, only: [:create]
     resources :subscriptions, only: [:create]
     resource :session, only: [:create, :destroy]
-    resources :users, only: [:create, :index]
+    resources :users, only: [:create, :index] do
+      resources :notifications, only: [:destroy]
+    end
     resources :channels, only: [:create, :index, :show]
     resources :messages, only: [:create]
   end

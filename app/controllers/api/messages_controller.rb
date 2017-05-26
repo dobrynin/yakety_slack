@@ -11,14 +11,20 @@ class Api::MessagesController < ApplicationController
         created_at: @message.created_at
       )
       channel.users.each do |user|
+        notification = Notification.get_notification(user.id, channel.id)
+        notification.increment!
         ActionCable.server.broadcast(
           "user_#{user.id}",
-          DM:           channel.DM,
-          created_at:   channel.created_at,
-          description:  channel.description,
-          id:           channel.id,
-          moderator_id: channel.moderator_id,
-          name:         channel.name
+          channel: {
+            DM:           channel.DM,
+            created_at:   channel.created_at,
+            description:  channel.description,
+            id:           channel.id,
+            moderator_id: channel.moderator_id,
+            name:         channel.name
+          },
+          count: notification.count
+
         )
       end
 

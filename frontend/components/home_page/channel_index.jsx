@@ -2,6 +2,7 @@ import React from 'react';
 import ChannelIndexItem from './channel_index_item';
 import { selectChannels, selectDMs } from '../../reducers/selectors';
 import ChannelModal from './channel_modal';
+import { withRouter } from 'react-router-dom';
 
 class ChannelIndex extends React.Component {
 
@@ -23,8 +24,9 @@ class ChannelIndex extends React.Component {
     }, {
       connected: () => {},
       disconnected: () => {},
-      received: channel => this.props.receiveChannel(channel)
-    });
+      received: notification => {
+        this.props.receiveNotification(notification);
+    }});
   }
 
   openModal(modalType) {
@@ -40,6 +42,10 @@ class ChannelIndex extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.channels.length !== this.props.channels.length) {
       this.props.fetchChannels();
+    }
+    if (nextProps.location.pathname != this.props.location.pathname) {
+      const channelId = parseInt(nextProps.location.pathname.replace('/channels/', ''));
+      this.props.deleteNotifications(this.props.currentUser.id, channelId);
     }
   }
 
@@ -65,7 +71,7 @@ class ChannelIndex extends React.Component {
           </button>
         </div>
         {channels.map(channel => (
-          <ChannelIndexItem channel={channel} key={channel.id}/>
+          <ChannelIndexItem channel={channel} key={`channel-${channel.id}`} notifications={this.props.notifications}/>
         ))}
       </div>
       <div className='channels'>
@@ -76,11 +82,11 @@ class ChannelIndex extends React.Component {
           </button>
         </div>
         {DMs.map(DM => (
-          <ChannelIndexItem currentUser={currentUser} channel={DM} key={DM.id}/>
+          <ChannelIndexItem currentUser={currentUser} channel={DM} key={DM.id} notifications={this.props.notifications}/>
         ))}
       </div>
     </div>
   );}
 }
 
-export default ChannelIndex;
+export default withRouter(ChannelIndex);

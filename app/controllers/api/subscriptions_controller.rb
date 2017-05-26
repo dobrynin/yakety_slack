@@ -5,6 +5,7 @@ class Api::SubscriptionsController < ApplicationController
     subscription.user_id ||= current_user.id
     subscription.save
     @user = subscription.user
+    Notification.create!(user_id: subscription.user_id, channel_id: subscription.channel_id)
     render "api/users/show"
   end
 
